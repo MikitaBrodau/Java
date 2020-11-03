@@ -16,7 +16,7 @@ public class main {
 //    posNegNull.PosNegNull(); //task 3
 //        System.out.println();
 //
-//    int[]a = {5, 3, 7, 6123, 4, 2, 4, 3, 2, 76, 32, 4, -9, -4, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2};
+    int[]a = {5, 3, 7, 6123, 4, 2, 4, 3, 2, 76, 32, 4, -9, -4, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2};
 //    ReplaceMinMax replaceMinMax = new ReplaceMinMax();
 //    System.out.println(Arrays.toString((replaceMinMax.ReplaceMinMax(a)))); //task 4
 //        System.out.println();
@@ -38,7 +38,7 @@ public class main {
 //    MostSequenceNumber mostSequenceNumber = new MostSequenceNumber();
 //    mostSequenceNumber.MostSequenceNumber(a); //task 9
 //
-//    SecondArrayNumber secondArrayNumber = new SecondArrayNumber();
-//    secondArrayNumber.KillArray(a);
+    SecondArrayNumber secondArrayNumber = new SecondArrayNumber();
+    secondArrayNumber.KillArray(a); //task10
     }
 }
