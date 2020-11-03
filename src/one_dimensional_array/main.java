@@ -16,7 +16,7 @@ public class main {
 //    posNegNull.PosNegNull(); //task 3
 //        System.out.println();
 //
-    int[]a = {5, 3, 7, 6123, 4, 2, 4, 3, 2, 76, 32, 4, -9, -4, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2};
+    int[]a = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18};
 //    ReplaceMinMax replaceMinMax = new ReplaceMinMax();
 //    System.out.println(Arrays.toString((replaceMinMax.ReplaceMinMax(a)))); //task 4
 //        System.out.println();
