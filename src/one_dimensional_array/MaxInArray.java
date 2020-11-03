@@ -4,12 +4,13 @@ import java.util.Arrays;
 
 public class MaxInArray {
     public void MaxInArray(int[]a){
-        int max = 0;
-        int mid =a.length/2;
         System.out.println(Arrays.toString(a));
-        for (int i = 0; i <= mid; i++) {
-            max = Math.max(a[i], a[a.length-i-1]);
+        for (int i = 0; i < a.length; i+=4) {
+            int max = Math.max(sum(a[i],a[i+1]), sum(a[i+2],a[i+3]));
             System.out.println(max);
         }
+    }
+    private static int sum(int a, int b){
+        return a + b;
     }
 }
