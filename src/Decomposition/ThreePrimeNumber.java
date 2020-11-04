@@ -3,7 +3,7 @@ package Decomposition;
 import java.util.Scanner;
 
 public class ThreePrimeNumber {
-    public void ThreePrimeNumber(){
+    public static void ThreePrimeNumber(){
         Scanner sc = new Scanner(System.in);
         int[] a = new int[3];
         System.out.println("Type your three numbers.");
@@ -16,7 +16,7 @@ public class ThreePrimeNumber {
             }
         }
     }
-    private static boolean isPrime (int a){
+    public static boolean isPrime (int a){
         for (int i = 2; i < a; i++) {
             if (a % i == 0) {
                 return false;

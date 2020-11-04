@@ -1,16 +1,9 @@
 package Decomposition;
 
+import static Decomposition.GCDAndLCM.gcd;
+
 public class GCD4Num {
-    public static void GCD4Num(int[] a){
-        System.out.println(gcd(a));
-    }
-
-    private static int gcd(int a, int b) {
-        if (b == 0) return a;
-        return gcd(b, a % b);
-    }
-
-    private static int gcd(int[] a) {
+    public static int gcdOfFour(int[] a) {
         int result = a[0];
         for (int k : a) {
             result = gcd(result, k);

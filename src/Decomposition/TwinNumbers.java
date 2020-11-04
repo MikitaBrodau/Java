@@ -1,12 +1,14 @@
 package Decomposition;
 
+import static Decomposition.ThreePrimeNumber.isPrime;
+
 public class TwinNumbers {
-    public static int Twins(int amount) {
-        int counter = counter(amount);
+    public static int primeTwins(int amount) {
+        int counter = counterOfPrimeNumbers(amount);
         System.out.println("Amount of prime number twins = " + counter );
         return counter;
     }
-    private static int counter (int amount){
+    private static int counterOfPrimeNumbers (int amount){
         int counter = 0;
         for (int i = 1; i < amount-1; i++) {
             if(isPrime(i-1)& isPrime(i+1))
@@ -16,13 +18,6 @@ public class TwinNumbers {
             }
         }
         return  counter;
-    }
-
-    private static boolean isPrime (int a){
-        for (int i = 2; i < a; i++) {
-            if (a % i == 0) return false;
-        }
-        return true;
     }
 }
 

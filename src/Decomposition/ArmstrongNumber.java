@@ -1,22 +1,25 @@
 package Decomposition;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static Decomposition.NinArray.transform;
+
 public class ArmstrongNumber {
-    public static void Armstrong (int amount){
+    public static List<Integer> Armstrong(int amount) {
+        List<Integer> listOfArmstrong = new ArrayList<>();
         for (int i = 0; i < amount; i++) {
-            if(sum(i) == i){
-                System.out.println(i + "is Armstrong Number");
+            if (sumOfNumsArmstrong(transform(i)) == i) {
+                listOfArmstrong.add(i);
             }
         }
+        return listOfArmstrong;
     }
 
-    private static int sum ( int a){
-        String temp = Integer.toString(a);
-        int[] arr = new int [temp.length()];
+    public static int sumOfNumsArmstrong(int[] arr) {
         int sum = 0;
-        for (int i = 0; i < arr.length; i++)
-        {
-            arr[i] = temp.charAt(i) - '0';
-            sum += Math.pow(arr[i], temp.length());
+        for (int i = 0; i < arr.length; i++) {
+            sum += Math.pow(arr[i], arr.length);
         }
         return sum;
     }
