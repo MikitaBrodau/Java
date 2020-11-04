@@ -1,7 +1,8 @@
 package multi_dimensional_array;
 
-public class MagicFuckingCube {
-    public int[][] MagicFUCKINGCube(int n){
+public class MagicCube {
+    public int[][] MagicCube(int n){
+        if (n % 2 != 0) throw new IllegalArgumentException("No, you can't do it to me");
         int[][] cube = new int[n][n];
         soutArr(cube);
         int row = n-1;

@@ -41,8 +41,8 @@ public class Main {
 //        SortColumns sortColumns = new SortColumns();
 //        sortColumns.sortColumns(10); //task 13
 
-        RowFillWith1 rowFillWith1 = new RowFillWith1();
-        rowFillWith1.RowFillWith1(6,6);//task 14
+//        RowFillWith1 rowFillWith1 = new RowFillWith1();
+//        rowFillWith1.RowFillWith1(6,6);//task 14
 
 //        MaxElement maxElement = new MaxElement();
 //        maxElement.maxElement(7); //task 15
