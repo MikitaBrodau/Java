@@ -11,10 +11,18 @@ public class ColumnSum {
             }
             System.out.println();
         }
+        int summaryMax = 0;
+        int columnNum = 0;
         for (int i = 0; i < arr.length; i++) {
             int sum = Sum(i,arr);
+            if (sum > summaryMax){
+                summaryMax = sum;
+                columnNum = i;
+
+            }
             System.out.println("Sum of " + i + " column = " + sum);
         }
+        System.out.println("largest sum = " + summaryMax + "\ncolumn №" + columnNum);
         return arr;
     }
 

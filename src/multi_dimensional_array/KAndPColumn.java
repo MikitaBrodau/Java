@@ -6,11 +6,12 @@ public class KAndPColumn {
         RandomMatrix(array);
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
-                System.out.print("\t"+array[i][j]);
+                System.out.print(array[i][j]+"\t");
             }
             System.out.println();
         }
-        System.out.println(array[k][p]);
+        column(array,k);
+        row(array,p);
 
     return array;
     }
@@ -21,5 +22,15 @@ public class KAndPColumn {
             }
         }
         return matrix;
+    }
+    private static void column(int[][] matrix, int k){
+        for (int i = 0; i < matrix.length; i++) {
+            System.out.println("\t"+matrix[i][k]);
+        }
+    }
+    private static void row (int[][] matrix, int p){
+        for (int i = 0; i < matrix.length ; i++) {
+                System.out.print(matrix[p][i] + " ");
+        }
     }
 }

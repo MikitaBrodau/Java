@@ -24,7 +24,7 @@ public class Diagonal {
     public int[][] DiagonalOutput(int[][] matrix){
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                if(matrix[i][j] == matrix[j][i]) System.out.print("\n"+ matrix[j][i]);
+                if(i == j) System.out.print("\n"+ matrix[j][i]);
             }
         }
         return matrix;
