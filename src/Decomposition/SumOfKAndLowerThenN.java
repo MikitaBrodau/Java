@@ -2,11 +2,11 @@ package Decomposition;
 
 import java.util.Arrays;
 
-import static Decomposition.NinArray.transform;
+import static Decomposition.NumberInArray.transformInArray;
 
 public class SumOfKAndLowerThenN {
-    public static int[] summary (int k, int m){
-        int[] a = transform(k);
+    public static int[] summary(int k, int m) {
+        int[] a = transformInArray(k);
         int sum = 0;
         for (int j : a) {
             sum += j;
@@ -16,6 +16,6 @@ public class SumOfKAndLowerThenN {
             }
         }
         System.out.println("Sum of numbers in K = " + sum + "\nNumbers in K" + Arrays.toString(a) + "\nM was = " + m);
-        return  a;
+        return a;
     }
 }

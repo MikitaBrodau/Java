@@ -1,9 +1,5 @@
 package Decomposition;
 
-import multi_dimensional_array.UnevenColumns;
-
-import java.util.Arrays;
-
 public class main {
     public static void main(String[] args) {
 //        GCDAndLCM.gcdAndLcm(5,10);//task1
@@ -13,11 +9,11 @@ public class main {
 //
 //        System.out.println(Polygon.PolygonSquare(10)); // task3
 //
-//        DotDistance.distanceBetween();//task4
+//        System.out.println(Arrays.toString(DotDistance.distanceBetween()));//task4
 //
 //        PenultMaxNumber.PenultMaxNumber(a); //task5
 
-//        ThreePrimeNumber.ThreePrimeNumber();//task6
+        System.out.println(ThreePrimeNumber.threePrimeNumbersCheck());//task6
 
 
 //        System.out.println(FactorialSumm.FactorialSumm()); //task7
