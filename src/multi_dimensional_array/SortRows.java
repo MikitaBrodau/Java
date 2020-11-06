@@ -2,6 +2,7 @@ package multi_dimensional_array;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class SortRows {
     public void SortRows(int n) {
@@ -11,7 +12,7 @@ public class SortRows {
         System.out.println();
         SoutArr(arr);
         System.out.println();
-        Replace(arr);
+        SortDesc(arr);
         SoutArr(arr);
     }
 
@@ -34,24 +35,26 @@ public class SortRows {
         }
     }
 
-    private int[][] Sort(int[][] arr) {
+    private void Sort(int[][] arr) {
         int n = arr.length;
         for (int i = 0; i < n; i++) {
             Arrays.sort(arr[i]);
         }
-        return arr;
     }
 
-    public int[][] Replace(int[][] matrix) {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length / 2; j++) {
-                if (matrix[i][j] < matrix[i][matrix[i].length - 1 - j]) {
-                    int temp = matrix[i][j];
-                    matrix[i][j] = matrix[i][matrix[i].length - j - 1];
-                    matrix[i][matrix[i].length - j - 1] = temp;
+    private static void SortDesc(int[][] arr) {
+        int m;
+        int temp;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                for (m = 0; m < arr[i].length - 1; m++) {
+                    if (arr[i][j] > arr[i][m]) {
+                        temp = arr[i][j];
+                        arr[i][j] = arr[i][m];
+                        arr[i][m] = temp;
+                    }
                 }
             }
         }
-            return matrix;
     }
 }

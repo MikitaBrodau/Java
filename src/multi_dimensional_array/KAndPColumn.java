@@ -23,13 +23,13 @@ public class KAndPColumn {
         }
         return matrix;
     }
-    private static void column(int[][] matrix, int k){
+     public static void column(int[][] matrix, int k){
         for (int i = 0; i < matrix.length; i++) {
             System.out.println("\t"+matrix[i][k]);
         }
     }
     private static void row (int[][] matrix, int p){
-        for (int i = 0; i < matrix.length ; i++) {
+        for (int i = 0; i < matrix[p].length ; i++) {
                 System.out.print(matrix[p][i] + " ");
         }
     }

@@ -35,8 +35,8 @@ public class Main {
 //        FixSizedMatrix fixSizedMatrix = new FixSizedMatrix();
 //        fixSizedMatrix.FixedSizedMatrix(); //task 11
 
-//        SortRows sortRows = new SortRows();
-//        sortRows.SortRows(10); //task12
+        SortRows sortRows = new SortRows();
+        sortRows.SortRows(10); //task12
 
 //        SortColumns sortColumns = new SortColumns();
 //        sortColumns.sortColumns(10); //task 13
@@ -47,8 +47,8 @@ public class Main {
 //        MaxElement maxElement = new MaxElement();
 //        maxElement.maxElement(7); //task 15
 
-//        MagicFuckingCube magicFuckingCube = new MagicFuckingCube();
-//        magicFuckingCube.MagicFUCKINGCube(10); //task 16
+//        MagicCube magicCube = new MagicCube();
+//        magicCube.MagicCube(5); //task 16
     }
 
 }

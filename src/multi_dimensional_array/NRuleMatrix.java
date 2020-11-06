@@ -6,7 +6,7 @@ public class NRuleMatrix {
         int[][] array = new int[n][n];
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
-                array[i][j] = j;
+                if(i%2 != 0) array[i][j] = array[i][array[i].length-1-j];
             }
         }
 //        Replace(array);

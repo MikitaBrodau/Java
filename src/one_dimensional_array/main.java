@@ -29,8 +29,8 @@ public class main {
 //    System.out.println("\nYour sum = " + primeNumbers.RealNumbers(a)); //task 6
 //        System.out.println();
 
-//    MaxInArray maxInArray = new MaxInArray();
-//    maxInArray.MaxInArray(a); //task 7
+    MaxInArray maxInArray = new MaxInArray();
+    maxInArray.MaxInArray(a); //task 7
 //
 //        MinOrder minOrder = new MinOrder();
 //        System.out.println(minOrder.MinOrder(a)); //task 8
@@ -38,7 +38,7 @@ public class main {
 //    MostSequenceNumber mostSequenceNumber = new MostSequenceNumber();
 //    mostSequenceNumber.MostSequenceNumber(a); //task 9
 //
-    SecondArrayNumber secondArrayNumber = new SecondArrayNumber();
-    secondArrayNumber.KillArray(a); //task10
+//    SecondArrayNumber secondArrayNumber = new SecondArrayNumber();
+//    secondArrayNumber.KillArray(a); //task10
     }
 }
