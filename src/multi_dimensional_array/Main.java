@@ -11,12 +11,12 @@ public class Main {
 //        KAndPColumn kAndPColumn = new KAndPColumn();
 //        kAndPColumn.KAndPColumn(5,2,3); //task3
 //
-//        NRuleMatrix nRuleMatrix = new NRuleMatrix();
-//        nRuleMatrix.NRuleMatrix(10); //task4
-//
-//        DiagonalInverse diagonalInverse = new DiagonalInverse();
-//        diagonalInverse.DiagonalInverse(6); //task5
-//
+        NRuleMatrix nRuleMatrix = new NRuleMatrix();
+        nRuleMatrix.NRuleMatrix(5); //task4
+//w DiagonalInverse();
+////        diagonalInverse.DiagonalInverse(6); //task5
+////
+//        DiagonalInverse diagonalInverse = ne
 //        FillingInCenter fillingInCenter = new FillingInCenter();
 //        fillingInCenter.FillingInCenter(14); //task6
 //
@@ -35,8 +35,8 @@ public class Main {
 //        FixSizedMatrix fixSizedMatrix = new FixSizedMatrix();
 //        fixSizedMatrix.FixedSizedMatrix(); //task 11
 
-        SortRows sortRows = new SortRows();
-        sortRows.SortRows(10); //task12
+//        SortRows sortRows = new SortRows();
+//        sortRows.SortRows(10); //task12
 
 //        SortColumns sortColumns = new SortColumns();
 //        sortColumns.sortColumns(10); //task 13

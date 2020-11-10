@@ -8,8 +8,7 @@ public class GCD4Num {
         for (int k : a) {
             result = gcd(result, k);
             if (result == 1) {
-                return 1;
-            }
+                return 1; }
         }
         return result;
     }
