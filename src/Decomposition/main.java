@@ -7,16 +7,16 @@ public class main {
 //        int[] a = {3,9,15,30};
 //        System.out.println("GCD of 4 numbers is = " + GCD4Num.gcdOfFour(a)); //task2
 //
-//        System.out.println(Polygon.PolygonSquare(10)); // task3
+//        System.out.println(Polygon.polygon(10)); // task3
 //
 //        System.out.println(Arrays.toString(DotDistance.distanceBetween()));//task4
 //
-//        PenultMaxNumber.PenultMaxNumber(a); //task5
+//        System.out.println(PenultMaxNumber.PenultMaxNumber(a)); //task5
 
-        System.out.println(ThreePrimeNumber.threePrimeNumbersCheck());//task6
+//        System.out.println(ThreePrimeNumber.threePrimeNumbersCheck());//task6
 
 
-//        System.out.println(FactorialSumm.FactorialSumm()); //task7
+        System.out.println(FactorialSum.factorialSum()); //task7
 
 //        int[] arr = {4,62345,623,462345,135,346,12,354,436};
 //        SumOfThree.SumOfThree(arr); // task8
