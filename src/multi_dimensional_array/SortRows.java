@@ -47,8 +47,8 @@ public class SortRows {
         int temp;
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
-                for (m = 0; m < arr[i].length - 1; m++) { //error
-                    if (arr[i][j] > arr[i][m]) {
+                for (m = j; m < arr[i].length; m++) { //error
+                    if (arr[i][j] < arr[i][m]) {
                         temp = arr[i][j];
                         arr[i][j] = arr[i][m];
                         arr[i][m] = temp;
