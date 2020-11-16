@@ -20,10 +20,7 @@ public class SumOfKAndLowerThenN {
 
     private static boolean search(int number, int k){
         int[] j = transformInArray(number);
-        int sum = 0;
-        for (int i = 0; i < j.length; i++) {
-            sum+= j[i];
-        }
+        int sum = UnevenNumbers.sum(j);
         return sum == k;
     }
 }
