@@ -10,7 +10,7 @@ public class main {
 //        int[] a = {3,9,15,30};
 //        System.out.println("GCD of 4 numbers is = " + GCD4Num.gcdOfFour(a)); //task2
 //
-        System.out.println(Polygon.polygon(10)); // task3
+//        System.out.println(Polygon.polygon(15)); // task3
 //
 //        System.out.println(Arrays.toString(DotDistance.distanceBetween()));//task4
 //
