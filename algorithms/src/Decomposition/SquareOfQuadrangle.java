@@ -1,15 +1,12 @@
 package Decomposition;
 
+import static Decomposition.Polygon.squareOfTriangle;
+
 public class SquareOfQuadrangle {
     public static double SquareOfQuadrangle(int x, int y, int z, int t) {
         double c = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
         double s1 = squareOfTriangle(x, y, c);
         double s2 = squareOfTriangle(z, t, c);
         return s1 + s2;
-    }
-
-    public static double squareOfTriangle(double a, double b, double c) {
-        double p = (a + b + c) / 2;
-        return Math.sqrt(p * (p - a) * (p - b) * (p - c));
     }
 }
