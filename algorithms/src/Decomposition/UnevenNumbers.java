@@ -16,9 +16,9 @@ public class UnevenNumbers {
         this.counter = counter;
     }
 
-    public static UnevenNumbers unevenNumbers(int amount) {
+    public static UnevenNumbers unevenNumbers(int n) {
         int sum = 0;
-        for (int i = 1; i <= amount; i++) {
+        for (int i = (int)Math.pow(10,n); i < (int)Math.pow(10,n+1)-1; i++) {
             int[] j = transformInArray(i);
             if (unevenCheck(j)) {
                 sum += i;

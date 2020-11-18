@@ -11,9 +11,17 @@ public class SumOfThree {
 
     private static List<Integer> sum(int[] arr) {
         ArrayList<Integer> list = new ArrayList<>();
-        for (int i = 1; i < arr.length - 1; i += 3) {
-            list.add(arr[i - 1] + arr[i] + arr[i + 1]);
+        for (int i = 0; i < 3; i++) {
+            list.add(calc(arr, i, i + 2));
         }
         return list;
+    }
+
+    private static int calc(int[] arr, int k, int m) {
+        int sum = 0;
+        for (int i = k; i <= m; i++) {
+            sum = sum + arr[i];
+        }
+        return sum;
     }
 }

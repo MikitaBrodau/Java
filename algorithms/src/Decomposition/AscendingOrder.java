@@ -5,9 +5,9 @@ import java.util.*;
 import static Decomposition.NumberInArray.transformInArray;
 
 public class AscendingOrder {
-    public static List<Integer> ascending(int amount) {
+    public static List<Integer> ascending(int n) {
         List<Integer> ascOrder = new ArrayList<>();
-        for (int i = 0; i < amount; i++) {
+        for (int i = (int)Math.pow(10,n); i < (int)Math.pow(10,n+1)-1; i++) {
             int[] c = transformInArray(i);
             if (checkAscension(c)) {
                 ascOrder.add(i);

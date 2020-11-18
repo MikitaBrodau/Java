@@ -21,8 +21,8 @@ public class main {
 
 //        System.out.println(FactorialSum.factorialSum()); //task7
 
-//        int[] arr = {1,2,3,4,5,6,7,8,9,10,11,12};
-//        System.out.println(SumOfThree.SumOfThree(arr).toString()); // task8
+        int[] arr = {1,2,3,4,5,6};
+        System.out.println(SumOfThree.SumOfThree(arr).toString()); // task8
 
 //        System.out.println(SquareOfQuadrangle.SquareOfQuadrangle(5,5,5,5));//task 9
 
@@ -37,11 +37,11 @@ public class main {
 
 //        System.out.println(ArmstrongNumber.Armstrong(2000000)); //task14
 
-//        System.out.println(AscendingOrder.ascending(1000).toString()); //task15
-
-//        System.out.println(UnevenNumbers.unevenNumbers(10).toString()); //task16
-
-//        System.out.println(NumberMinusSum.amountOfOperations(15));//task17
+//        System.out.println(AscendingOrder.ascending(4).toString()); //task15
+//
+//        System.out.println(UnevenNumbers.unevenNumbers(5).toString()); //task16
+//
+//        System.out.println(NumberMinusSum.amountOfOperations(100));//task17
     }
 
 }
