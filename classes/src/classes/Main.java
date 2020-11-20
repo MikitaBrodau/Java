@@ -25,16 +25,25 @@ public class Main {
 //        System.out.println(list.toString());
 
 
-        List<Train> trains = new ArrayList<>();
-        trains.add(new Train("GaaGa", 1, "12.43"));
-        trains.add(new Train("Moscow", 17, "10.43"));
-        trains.add(new Train("Minsk", 3, "16.34"));
-        trains.add(new Train("Minsk", 3, "23.00"));
-        System.out.println(trains.toString());
-        sort(trains);
-        System.out.println(Train.containsNumber(trains, 1));
-        CompareTrain compare = new CompareTrain();
-        trains.sort(compare);
-        System.out.println(trains.toString());
+//        List<Train> trains = new ArrayList<>();
+//        trains.add(new Train("GaaGa", 1, "12.43"));
+//        trains.add(new Train("Moscow", 17, "10.43"));
+//        trains.add(new Train("Minsk", 3, "16.34"));
+//        trains.add(new Train("Minsk", 3, "23.00"));
+//        System.out.println(trains.toString());
+//        sort(trains);
+//        System.out.println(Train.containsNumber(trains, 1));
+//        CompareTrain compare = new CompareTrain();
+//        trains.sort(compare);
+//        System.out.println(trains.toString());
+
+//        Counter counter = new Counter(6);
+//        counter.counterIncrement();
+//        counter.counterDecrement();
+
+//        Time time = new Time(22, 9 , 9);
+//        System.out.println(time.toString());
+//        time.timeChange(11, 15, 0);
+//        System.out.println(time.toString());
     }
 }
