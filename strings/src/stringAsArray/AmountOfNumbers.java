@@ -13,4 +13,11 @@ public class AmountOfNumbers {
         }
         return count;
     }
+    public static int amountWithoutRegex(String numbers){
+        int counter = 0;
+        for (int i = 0; i < numbers.length()-1; i++) {
+            if (Character.isDigit(numbers.charAt(i))&& !Character.isDigit(numbers.charAt(i+1))) counter++;
+        }
+        return counter;
+    }
 }

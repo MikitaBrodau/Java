@@ -7,7 +7,8 @@ public class CamelCaseSnake_Case {
     public static String[] splitString(String[] camel) {
         String[] snake = new String[camel.length];
         for (int i = 0; i < camel.length; i++) {
-            snake[i] = splitStringRegular(camel[i]);
+//            snake[i] = splitStringRegular(camel[i]);
+            snake[i] = withoutRegex(camel[i]);
         }
         return snake;
     }
@@ -21,5 +22,19 @@ public class CamelCaseSnake_Case {
         }
         matcher.appendTail(snake);
         return snake.toString().toLowerCase();
+    }
+    public static String withoutRegex(String camel){
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < camel.length(); i++) {
+            char letter = camel.charAt(i);
+            if(Character.isLowerCase(letter)){
+                sb.append(letter);
+            }
+            else{
+                sb.append("_");
+                sb.append(letter);
+            }
+        }
+        return sb.toString().toLowerCase();
     }
 }

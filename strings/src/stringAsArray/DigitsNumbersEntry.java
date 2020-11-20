@@ -13,4 +13,11 @@ public class DigitsNumbersEntry {
         }
         return count;
     }
+    public static int entryWithoutRegex(String str){
+        int counter = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (Character.isDigit(str.charAt(i))) counter++;
+        }
+        return counter;
+    }
 }

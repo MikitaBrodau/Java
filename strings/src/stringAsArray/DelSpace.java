@@ -1,5 +1,6 @@
 package stringAsArray;
 
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -13,5 +14,9 @@ public class DelSpace {
             space = matcher.replaceAll(" ");
         }
         return space;
+    }
+    public static String delWithoutRegex(String space){
+        String[] words = space.trim().split("\\s{2,}");
+        return Arrays.toString(words);
     }
 }
