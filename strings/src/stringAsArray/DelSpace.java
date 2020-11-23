@@ -16,7 +16,11 @@ public class DelSpace {
         return space;
     }
     public static String delWithoutRegex(String space){
-        String[] words = space.trim().split("\\s{2,}");
-        return Arrays.toString(words);
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < space.length()-1; i++) {
+            if(!Character.isSpaceChar(space.charAt(i))) sb.append(space.charAt(i));
+            else if(Character.isSpaceChar(space.charAt(i)) && !Character.isSpaceChar(space.charAt(i+1))) sb.append(space.charAt(i));
+        }
+        return sb.toString();
     }
 }

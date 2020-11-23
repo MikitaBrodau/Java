@@ -17,23 +17,13 @@ public class ChangeWordOnLetter {
 
     public static String wordOnLetterWithoutRegex(String word) {
         StringBuilder sb = new StringBuilder();
-        String[] words = word.split("\\s");
-        for (int i = 0; i < words.length; i++) {
-            sb.append(divide(words[i].toLowerCase())).append(" ");
+        for (int i = 0; i < word.length(); i++) {
+            if(word.toLowerCase().startsWith("word", i)){
+                sb.append("letter");
+                i = i+3;
+            }
+            else sb.append(word.charAt(i));
         }
         return sb.toString().toLowerCase();
-    }
-
-    private static String divide(String word) {
-        char[] div = {'w','o','r','d'};
-        int counter = 0;
-        for (int i = 0; i < div.length; i++) {
-            if (word.charAt(i) == div[i]){
-             counter++;
-            }
-            else return word;
-            if (counter == 4) return "letter";
-        }
-        return word;
     }
 }
