@@ -102,21 +102,41 @@ public class Customer implements Comparable<Customer> {
         return bankAccount.toUpperCase();
     }
 
-    static class CustomerDatabase {
-        private  static final List<Customer> customers = new ArrayList<>();
-         public CustomerDatabase() {}
+    static class CustomerDatabase implements DataBase {
+        private static final List<Customer> customers = new ArrayList<>();
 
-         public  void addCustomer(Customer customer) {
-            customers.add(customer);
+        public CustomerDatabase() {
         }
 
-        public  List<Customer> getCustomers() {
+        @Override
+        public void addIn_DB(Object customer) {
+            customers.add((Customer) customer);
+        }
+
+        @Override
+        public List<Customer> get_DB() {
             return customers;
         }
 
-        public void toString(long max, long min) {
+        @Override
+        public void sortBy_FirstCondition(Object obj) {
+
+        }
+
+        @Override
+        public void sortBy_SecondCondition(Object obj) {
+
+        }
+
+        @Override
+        public void sortBy_ThirdCondition(Object obj) {
+
+        }
+
+        @Override
+        public void sortBy_TwoConditions(Object o1, Object o2) {
             for (Customer c : customers) {
-                if(c.creditCardNumber > min && c.creditCardNumber < max)
+                if (c.creditCardNumber > (long) o1 && c.creditCardNumber < (long) o2)
                     System.out.println(c.toString());
             }
         }

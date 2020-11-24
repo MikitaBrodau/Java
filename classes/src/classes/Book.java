@@ -118,46 +118,55 @@ public class Book {
                 "\ncover = " + cover + "\n";
     }
 
-    static class BookDatabase {
+    static class BookDatabase implements DataBase {
         private static final List<Book> books = new ArrayList<>();
 
         public BookDatabase() {
         }
 
-        public void addBook(Book book) {
-            books.add(book);
+        @Override
+        public void addIn_DB(Object obj) {
+            books.add((Book) obj);
         }
 
-        public List<Book> getBooks() {
+        @Override
+        public List<Book> get_DB() {
             return books;
         }
 
-        public void byAuthor(String author) {
+        @Override
+        public void sortBy_FirstCondition(Object author) {
             for (Book b : books) {
-                Pattern pattern = Pattern.compile(author);
-                Matcher matcher = pattern.matcher(b.toString());
+                Pattern pattern = Pattern.compile((String) author);
+                Matcher matcher = pattern.matcher(b.authors);
                 if (matcher.find()) {
                     System.out.println(b.toString());
                 }
             }
         }
 
-        public void byPublishingHouse(String ph) {
+        @Override
+        public void sortBy_SecondCondition(Object ph) {
             for (Book b : books) {
-                Pattern pattern = Pattern.compile(ph);
-                Matcher matcher = pattern.matcher(b.toString());
+                Pattern pattern = Pattern.compile((String) ph);
+                Matcher matcher = pattern.matcher(b.publishingHouse);
                 if (matcher.find()) {
                     System.out.println(b.toString());
                 }
             }
         }
 
-        public void byYear(int year) {
+        @Override
+        public void sortBy_ThirdCondition(Object year) {
             for (Book b : books) {
-                if (b.year >= year) {
+                if (b.year >= (int) year) {
                     System.out.println(b.toString());
                 }
             }
+        }
+
+        @Override
+        public void sortBy_TwoConditions(Object o1, Object o2) {
         }
     }
 }
