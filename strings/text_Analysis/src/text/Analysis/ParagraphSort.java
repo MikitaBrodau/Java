@@ -1,17 +1,21 @@
 package text.Analysis;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
 public class ParagraphSort {
-    public static String paragraphs(String str) {
-        String[] causes = str.split("\n\s+|\n\t+");
-        return paragraphSort(causes);
+    public static String paragraphs (String str) {
+        List<String>  paragraphs = Arrays.asList(str.split("\n"));
+        return paragraphSort(paragraphs);
     }
 
     private static int countCause(String cause) {
-        Pattern pattern = Pattern.compile("[^.]+\\!|[^.]+\\?|[^.]+\\.");
+        Pattern pattern = Pattern.compile("([^.]+)\\.");
         Matcher matcher = pattern.matcher(cause);
         int count = 0;
         while (matcher.find()) {
@@ -19,19 +23,13 @@ public class ParagraphSort {
         }
         return count;
     }
-    private static String paragraphSort(String[] str){
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < str.length; i++) {
-            for (int j = 0; j < str.length - 1; j++) {
-                if (countCause(str[j]) < countCause(str[j + 1])) {
-                    String temp = str[j];
-                    str[j] = str[j + 1];
-                    str[j + 1] = temp;
-                }
-            }
-            sb.append(str[i]).append("\n\t");
+    private static String paragraphSort(List<String> str){
+        str.sort(Comparator.comparingInt(ParagraphSort::countCause).reversed());
+        StringBuilder inString = new StringBuilder();
+        for (String s : str) {
+            inString.append(s).append("\n");
         }
-        return sb.toString();
+        return inString.toString();
     }
 
 }

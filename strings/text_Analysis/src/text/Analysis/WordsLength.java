@@ -1,8 +1,12 @@
 package text.Analysis;
 
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class WordsLength {
     public static String split(String str) {
-        String[] causes = str.split("\n\s+|\n\t+");
+        String[] causes = str.split("\n");
         StringBuilder sb = new StringBuilder();
         for (String cause : causes) {
             sb.append(divide(cause));
@@ -11,29 +15,18 @@ public class WordsLength {
     }
 
     public static String divide(String str) {
-        String[] paragraph = str.split("([\\w]+[.])");
+        Pattern pattern = Pattern.compile("([^.]+)([!\\?.])");
+        Matcher matcher = pattern.matcher(str);
         StringBuilder sb = new StringBuilder();
-        for (String s : paragraph) {
-            sb.append(divideAndSwap(s));
-        }
+        while (matcher.find()) sb.append(sorting(matcher.group(1))).append(matcher.group(2)).append("\n");
         return sb.toString();
     }
 
-    private static String divideAndSwap(String str) {
-        String[] words = str.split("\\s+");
+    public static String sorting(String str) {
+        List<String> list = Arrays.asList(str.split("\s+"));
+        list.sort(Comparator.comparingInt(String::length).reversed());
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < words.length - 1; i++) {
-            for (int j = 0; j < words.length - 1; j++) {
-                if (words[j].length() < words[j + 1].length()) {
-                    String temp = words[j];
-                    words[j] = words[j + 1];
-                    words[j + 1] = temp;
-                }
-            }
-        }
-        for (String word : words) {
-            sb.append(word).append(" ");
-        }
+        for (String s : list) sb.append(s).append(" ");
         return sb.toString();
     }
 }

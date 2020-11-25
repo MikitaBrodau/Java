@@ -16,8 +16,8 @@ public class main {
             e.printStackTrace();
         }
         String text = sb.toString();
-//        System.out.println(ParagraphSort.paragraphs(text));
-//        System.out.println(WordsLength.split(text));
+        System.out.println(ParagraphSort.paragraphs(text));
+        System.out.println(WordsLength.split(text));
         LexemeSort lexemeSort = new LexemeSort();
         System.out.println(lexemeSort.divideOnClauses(text, 'о'));
     }

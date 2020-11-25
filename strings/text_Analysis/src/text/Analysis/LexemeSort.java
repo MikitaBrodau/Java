@@ -20,7 +20,7 @@ public class LexemeSort {
     }
 
     private String divideToWords(String str, char g) {
-        Pattern wordPattern = Pattern.compile("([^.\\s]*+)|()");
+        Pattern wordPattern = Pattern.compile("([^.\\s]+)|(\\p{Punct})");
         Matcher wordMatcher = wordPattern.matcher(str);
         List<Clause> list = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
@@ -44,7 +44,7 @@ public class LexemeSort {
         return count;
     }
 
-    public class Clause implements Comparable {
+    public static class Clause implements Comparable<Clause> {
         private final String clause;
         private final int count;
 
@@ -54,10 +54,10 @@ public class LexemeSort {
         }
 
         @Override
-        public int compareTo(Object o) {
-            int temp = ((Clause) o).count - this.count;
+        public int compareTo(Clause o) {
+            int temp = o.count - this.count;
             if (temp == 0) {
-                return ((Clause) o).clause.compareTo(this.clause);
+                return o.clause.compareTo(this.clause);
             }
             return temp;
         }

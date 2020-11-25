@@ -18,18 +18,18 @@ public class Main {
 //        cars.get(0).refuel(40);
 //        cars.get(0).ride(); //task 2
 
-//        CityList p = new CityList(new City("Warsaw",1_765_000, 517.2, true, true));
-//        p.cities.add(new City("Katowice", 302_397, 164.7, false, true));
-//        CityList c = new CityList(new City("Mogilev",380_440,118.5, false, true));
-//        c.cities.add(new City("Minsk",1_975_000,348.8, true, true));
-//        c.cities.add(new City("Babruysk",217_940, 90.02, false,false));
-//        RegionList regList = new RegionList(new Region("Belarus", c.cities));
-//        regList.regions.add(new Region("Poland", p.cities));
-//        Goverment goverment = new Goverment("POLSKA OKUPANTI", regList);
-//        System.out.println(goverment.toString()); //task 3
-//        System.out.println();
-//        goverment.regionCenters();
-//        goverment.capital();
-//        System.out.println(goverment.getAmountOfRegions());
+        CityList p = new CityList(new City("Warsaw",1_765_000, 517.2, true, true));
+        p.cities.add(new City("Katowice", 302_397, 164.7, false, true));
+        CityList c = new CityList(new City("Mogilev",380_440,118.5, false, true));
+        c.cities.add(new City("Minsk",1_975_000,348.8, true, true));
+        c.cities.add(new City("Babruysk",217_940, 90.02, false,false));
+        RegionList regList = new RegionList(new Region("Belarus", c.cities));
+        regList.regions.add(new Region("Poland", p.cities));
+        Goverment goverment = new Goverment("POLSKA OKUPANTI", regList);
+        System.out.println(goverment.toString()); //task 3
+        System.out.println();
+        goverment.regionCenters();
+        goverment.capital();
+        System.out.println(goverment.getAmountOfRegions());
     }
 }
