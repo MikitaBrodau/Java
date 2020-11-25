@@ -14,4 +14,18 @@ public class MostOfSpaceBetweenWords {
         }
         return max;
     }
+    public static int spaceWithoutRegex(String words){
+        int max = 0;
+        for (int i = 0; i < words.length(); i++) {
+            int counter = 0;
+            if (Character.isWhitespace(words.charAt(i))){
+                while(Character.isWhitespace(words.charAt(i))){
+                    counter++;
+                    i++;
+                }
+                if (counter > max) max = counter;
+            }
+        }
+        return max;
+    }
 }

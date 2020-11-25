@@ -23,17 +23,15 @@ public class CamelCaseSnake_Case {
         matcher.appendTail(snake);
         return snake.toString().toLowerCase();
     }
-    public static String withoutRegex(String camel){
+    public static String withoutRegex(String camel) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < camel.length(); i++) {
             char letter = camel.charAt(i);
-            if(Character.isLowerCase(letter)){
-                sb.append(letter);
+            if (i != 0 && Character.isUpperCase(letter) && Character.isLowerCase(camel.charAt(i - 1))) {
+                    sb.append("_");
+                    sb.append(letter);
             }
-            else{
-                sb.append("_");
-                sb.append(letter);
-            }
+            else sb.append(letter);
         }
         return sb.toString().toLowerCase();
     }

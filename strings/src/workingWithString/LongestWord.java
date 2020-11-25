@@ -15,4 +15,19 @@ public class LongestWord {
         }
         return longOne;
     }
+    public static String longestOneWithoutRegex(String str) {
+        String max = "";
+        for (int i = 0; i < str.length(); i++) {
+            StringBuilder sb = new StringBuilder();
+            if (Character.isAlphabetic(str.charAt(i))){
+                while (Character.isAlphabetic(str.charAt(i))){
+                    if (i == str.length()-1) break;
+                    sb.append(str.charAt(i));
+                    i++;
+                }
+                if(sb.length() > max.length()) max = sb.toString();
+            }
+        }
+        return max;
+    }
 }

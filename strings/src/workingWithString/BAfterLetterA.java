@@ -6,12 +6,17 @@ import java.util.regex.Pattern;
 //Task 2.2, В строке вставить после каждого символа 'a' символ 'b'.
 public class BAfterLetterA {
     public static String addLetterB(String needB) {
-        Pattern pattern = Pattern.compile("a");
-        Matcher matcher = pattern.matcher(needB);
-        while (matcher.find()){
-            needB = matcher.replaceAll(matcher.group()+"b");
+        return needB.replaceAll("a", "ab");
+    }
+    public static String addLetterBWithoutRegex(String needB){
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < needB.length(); i++) {
+            sb.append(needB.charAt(i));
+            if (needB.charAt(i) == 'A' || needB.charAt(i) == 'a'){
+                sb.append('b');
+            }
         }
-        return needB;
+        return sb.toString();
     }
 
 }

@@ -6,8 +6,10 @@ import java.util.regex.Pattern;
 public class Cake {
     public static String cake() {
         String inform = "Информатика";
-        StringBuilder sb = new StringBuilder();
-        char[] cake = {inform.charAt(7), inform.charAt(3), inform.charAt(4), inform.charAt(7)};
-        return new String(cake);
+        String cake = String.valueOf(inform.charAt(inform.indexOf('т')));
+        cake += String.valueOf(inform.charAt(inform.indexOf('о')));
+        cake += String.valueOf(inform.charAt(inform.indexOf('р')));
+        cake += String.valueOf(inform.charAt(inform.indexOf('т')));
+        return cake;
     }
 }

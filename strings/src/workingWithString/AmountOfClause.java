@@ -14,4 +14,16 @@ public class AmountOfClause {
         }
         return count;
     }
+    public static int amountWithoutString(String str){
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            while (Character.isAlphabetic(str.charAt(i))) {
+                i++;
+                if ((str.charAt(i) == '.' || str.charAt(i) == '?' || str.charAt(i) == '!') && Character.isLetterOrDigit(str.charAt(i-1))) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
 }

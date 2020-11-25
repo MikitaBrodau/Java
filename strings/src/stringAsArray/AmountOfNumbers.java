@@ -17,8 +17,13 @@ public class AmountOfNumbers {
 
     public static int amountWithoutRegex(String numbers) {
         int counter = 0;
-        for (int i = 0; i < numbers.length() - 1; i++) {
-            if (Character.isDigit(numbers.charAt(i)) && (!Character.isDigit(numbers.charAt(i + 1)) || numbers.length()-1 == i+1)) counter++;
+        for (int i = 0; i < numbers.length() ; i++) {
+            if (Character.isDigit(numbers.charAt(i))) {
+                while (Character.isDigit(numbers.charAt(i)) && i != numbers.length()-1) {
+                    i++;
+                }
+                counter++;
+            }
         }
         return counter;
     }
