@@ -3,16 +3,17 @@ package text.Analysis;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
 public class ParagraphSort {
     public static String paragraphs(String str) {
-        String[] causes = str.split("\n{2,}");
+        String[] causes = str.split("\n\s+|\n\t+");
         return paragraphSort(causes);
     }
 
     private static int countCause(String cause) {
-        Pattern pattern = Pattern.compile("[^.][.]|[?]|[!]");
-        int count = 0;
+        Pattern pattern = Pattern.compile("[^.]+\\!|[^.]+\\?|[^.]+\\.");
         Matcher matcher = pattern.matcher(cause);
+        int count = 0;
         while (matcher.find()) {
             count++;
         }
@@ -28,7 +29,7 @@ public class ParagraphSort {
                     str[j + 1] = temp;
                 }
             }
-            sb.append(str[i]).append("\n\n");
+            sb.append(str[i]).append("\n\t");
         }
         return sb.toString();
     }

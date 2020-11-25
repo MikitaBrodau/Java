@@ -19,6 +19,6 @@ public class main {
 //        System.out.println(ParagraphSort.paragraphs(text));
 //        System.out.println(WordsLength.split(text));
         LexemeSort lexemeSort = new LexemeSort();
-        lexemeSort.lexeme(text, '.');
+        System.out.println(lexemeSort.divideOnClauses(text, 'о'));
     }
 }

@@ -8,50 +8,63 @@ import java.util.regex.Pattern;
 
 
 public class LexemeSort {
-    public String lexeme(String str, char g) {
-        Pattern pattern = Pattern.compile("([^\\s.?!]+)|(.|\\?|!)");
-        Matcher matcher = pattern.matcher(str.toLowerCase());
-        List<word> list = new ArrayList<>();
-        while (matcher.find()) {
-            list.add(new word(matcher.group(0), count(matcher.group(), g)));
+    public String divideOnClauses(String str, char g) {
+        Pattern clausePattern = Pattern.compile("[^.]+[.]");
+        Matcher clauseMatcher = clausePattern.matcher(str.toLowerCase());
+        StringBuilder sb = new StringBuilder();
+        while (clauseMatcher.find()) {
+            sb.append(divideToWords(clauseMatcher.group(), g));
         }
-        list.sort(word::compareTo);
-        System.out.println(list.toString());
-        return "";
+
+        return sb.toString();
+    }
+
+    private String divideToWords(String str, char g) {
+        Pattern wordPattern = Pattern.compile("([^.\\s]*+)|()");
+        Matcher wordMatcher = wordPattern.matcher(str);
+        List<Clause> list = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
+        while (wordMatcher.find()) {
+            list.add(new Clause(wordMatcher.group(), count(wordMatcher.group(), g)));
+        }
+        list.sort(Clause::compareTo);
+        for (Clause c : list) {
+            sb.append(c.toString()).append(" ");
+        }
+        sb.append("\n");
+        return sb.toString();
     }
 
     private static int count(String word, char g) {
         int count = 0;
-        for (int i = 0; i < word.length() ; i++) {
+        for (int i = 0; i < word.length(); i++) {
             if (word.charAt(i) == g)
-            count++;
+                count++;
         }
         return count;
     }
 
-    public class word implements Comparable {
-        private final String word;
+    public class Clause implements Comparable {
+        private final String clause;
         private final int count;
 
-        public word(String word, int count) {
-            this.word = word;
+        public Clause(String word, int count) {
+            this.clause = word;
             this.count = count;
         }
 
         @Override
         public int compareTo(Object o) {
-            int temp = ((word) o).count - this.count;
+            int temp = ((Clause) o).count - this.count;
             if (temp == 0) {
-                return ((word) o).word.compareTo(this.word);
+                return ((Clause) o).clause.compareTo(this.clause);
             }
             return temp;
         }
 
         @Override
         public String toString() {
-            return  word;
+            return clause;
         }
     }
-
 }
-

@@ -19,7 +19,7 @@ public class AmountOfNumbers {
         int counter = 0;
         for (int i = 0; i < numbers.length() ; i++) {
             if (Character.isDigit(numbers.charAt(i))) {
-                while (Character.isDigit(numbers.charAt(i)) && i != numbers.length()-1) {
+                while (Character.isDigit(numbers.charAt(i)) && i < numbers.length()-1) {
                     i++;
                 }
                 counter++;

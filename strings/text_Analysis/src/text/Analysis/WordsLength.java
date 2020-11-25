@@ -2,10 +2,10 @@ package text.Analysis;
 
 public class WordsLength {
     public static String split(String str) {
-        String[] causes = str.split("\n{2,}");
+        String[] causes = str.split("\n\s+|\n\t+");
         StringBuilder sb = new StringBuilder();
         for (String cause : causes) {
-            sb.append(divide(cause)).append("\n");
+            sb.append(divide(cause));
         }
         return sb.toString();
     }

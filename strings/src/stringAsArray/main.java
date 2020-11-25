@@ -18,7 +18,7 @@ public class main {
         String numbers = "44Number 24255, is seem not random, but who care about it? 2, that's seems too15";
         System.out.println(AmountOfNumbers.amountWithoutRegex(numbers)); //task4
 
-        String space = "God      bless   that";
+        String space = "  God      bless   that ";
         System.out.println(DelSpace.delWithoutRegex(space)); //task5
     }
 }

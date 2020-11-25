@@ -14,7 +14,6 @@ public class XmlLexicalAnalyzer {
 
     public static List<Tag> parse(String contents) {
         Matcher matcher = pattern.matcher(contents);
-            //(<[/].+[^/]>)|(<[^/].+[/]>)|(<[^/].*?[^/]>)|(?=<.+>)
         List<Tag> tags = new ArrayList<>();
 
         while (matcher.find()) {
