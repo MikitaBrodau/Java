@@ -19,7 +19,7 @@ public class MostOfSpaceBetweenWords {
         for (int i = 0; i < words.length(); i++) {
             int counter = 0;
             if (Character.isWhitespace(words.charAt(i))){
-                while(Character.isWhitespace(words.charAt(i))){
+                while(i < words.length() && Character.isWhitespace(words.charAt(i))){
                     counter++;
                     i++;
                 }

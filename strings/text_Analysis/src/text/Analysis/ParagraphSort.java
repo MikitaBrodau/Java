@@ -15,7 +15,7 @@ public class ParagraphSort {
     }
 
     private static int countCause(String cause) {
-        Pattern pattern = Pattern.compile("([^.]+)\\.");
+        Pattern pattern = Pattern.compile("([^.]+\\?)|([^.]+!)|([^.]+\\.)");
         Matcher matcher = pattern.matcher(cause);
         int count = 0;
         while (matcher.find()) {

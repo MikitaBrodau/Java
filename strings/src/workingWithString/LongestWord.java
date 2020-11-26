@@ -20,8 +20,7 @@ public class LongestWord {
         for (int i = 0; i < str.length(); i++) {
             StringBuilder sb = new StringBuilder();
             if (Character.isAlphabetic(str.charAt(i))){
-                while (Character.isAlphabetic(str.charAt(i))){
-                    if (i == str.length()-1) break;
+                while (i < str.length() && Character.isAlphabetic(str.charAt(i))){
                     sb.append(str.charAt(i));
                     i++;
                 }

@@ -1,6 +1,7 @@
 package workingWithString;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 /* Task 2.7 Вводится строка. Требуется удалить из нее повторяющиеся символы и все пробелы.
@@ -15,7 +16,7 @@ public class UniqueSymbolsWithoutSpace {
     }
 
     public static String uniqueWithoutRegex(String str) {
-        Set<Character> unique = new HashSet<>();
+        Set<Character> unique = new LinkedHashSet<>();
         for (int i = 0; i < str.length(); i++) {
             if (Character.isAlphabetic(str.charAt(i))) unique.add(str.charAt(i));
         }

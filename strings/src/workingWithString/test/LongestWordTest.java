@@ -10,8 +10,8 @@ class LongestWordTest extends DelSpace {
 
     @Test
     void longestOneWithoutRegex() {
-        String expect = "longest";
-        String result = LongestWord.longestOneWithoutRegex("now time to choose longest one word");
+        String expect = "defg";
+        String result = LongestWord.longestOneWithoutRegex("abc defg");
         assertEquals(expect,result);
     }
 }

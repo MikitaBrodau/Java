@@ -10,8 +10,8 @@ class MostOfSpaceBetweenWordsTest extends DelSpace {
 
     @Test
     void spaceWithoutRegex() {
-        int expect = 4;
-        int result = MostOfSpaceBetweenWords.spaceWithoutRegex(" 1  2   3    4");
+        int expect = 1;
+        int result = MostOfSpaceBetweenWords.spaceWithoutRegex(" ");
         assertEquals(expect, result);
     }
 }

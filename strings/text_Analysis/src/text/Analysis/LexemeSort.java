@@ -20,7 +20,7 @@ public class LexemeSort {
     }
 
     private String divideToWords(String str, char g) {
-        Pattern wordPattern = Pattern.compile("([^.\\s]+)|(\\p{Punct})");
+        Pattern wordPattern = Pattern.compile("([^.\\s]+)");
         Matcher wordMatcher = wordPattern.matcher(str);
         List<Clause> list = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
@@ -56,9 +56,7 @@ public class LexemeSort {
         @Override
         public int compareTo(Clause o) {
             int temp = o.count - this.count;
-            if (temp == 0) {
-                return o.clause.compareTo(this.clause);
-            }
+            if (temp == 0) return this.clause.compareTo(o.clause);
             return temp;
         }
 
