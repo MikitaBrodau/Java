@@ -1,170 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec4a1f78-8bce-4292-a721-e672b8b2f3bb" name="Default Changelist" comment="Feel great weekends behind my shoulders.">
-      <change beforePath="$PROJECT_DIR$/text_Analysis/src/xml/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/text_Analysis/src/xml/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/text_Analysis/src/xml/splitOnLines.java" beforeDir="false" afterPath="$PROJECT_DIR$/text_Analysis/src/xml/splitOnLines.java" afterDir="false" />
+    <list default="true" id="36083f35-c428-40f6-9aef-8e3f3048d02d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/TryNotToDie.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/out/production/TryNotToDie/branching.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/out/production/TryNotToDie/cycles.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/out/production/TryNotToDie/linear.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/branching.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/branching/Branching.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/branching/Task2_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/branching/Task2_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/branching/Task2_3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/branching/Task2_4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/branching/Task2_5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/cycles.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/cycles/Cycles.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/cycles/Task3_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/cycles/Task3_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/cycles/Task3_3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/cycles/Task3_4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/cycles/Task3_5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/cycles/Task3_6.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/cycles/Task3_7.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/linear.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/linear/program/LinearProgram.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/linear/program/Task1_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/linear/program/Task1_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/linear/program/Task1_3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/linear/program/Task1_4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/linear/program/Task1_5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TryNotToDie/src/linear/program/Task1_6.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms/algorithmization.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/classes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/classes/classes.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/src/stringAsArray/test/TestTestTestTestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/strings/src/stringAsArray/test/TestTestTestTestTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/src/workingWithString/test/AmountOfClauseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/strings/src/workingWithString/test/AmountOfClauseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/src/workingWithString/test/BAfterLetterATest.java" beforeDir="false" afterPath="$PROJECT_DIR$/strings/src/workingWithString/test/BAfterLetterATest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/src/workingWithString/test/LetterAFrequencyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/strings/src/workingWithString/test/LetterAFrequencyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/src/workingWithString/test/LettersCountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/strings/src/workingWithString/test/LettersCountTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/src/workingWithString/test/LongestWordTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/strings/src/workingWithString/test/LongestWordTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/src/workingWithString/test/MostOfSpaceBetweenWordsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/strings/src/workingWithString/test/MostOfSpaceBetweenWordsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/src/workingWithString/test/UniqueSymbolsWithoutSpaceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/strings/src/workingWithString/test/UniqueSymbolsWithoutSpaceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/string.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/text_Analysis/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/text_Analysis/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/text_Analysis/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/text_Analysis/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/text_Analysis/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/text_Analysis/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/text_Analysis/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/text_Analysis/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/text_Analysis/out/production/text_Analysis/text/Analysis/song.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/text_Analysis/out/production/text_Analysis/xml/text.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/text_Analysis/src/text/Analysis/LexemeSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/text_Analysis/src/text/Analysis/ParagraphSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/text_Analysis/src/text/Analysis/WordsLength.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/text_Analysis/src/text/Analysis/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/text_Analysis/src/text/Analysis/song.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/text_Analysis/src/xml/XmlLexicalAnalyzer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/text_Analysis/src/xml/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/text_Analysis/src/xml/splitOnLines.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/text_Analysis/src/xml/text.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/text_Analysis/text_Analysis.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/text_Analysis/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/text_Analysis/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/text_Analysis/.idea/text_Analysis.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/text_Analysis/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/text_Analysis/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/text_Analysis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/text_Analysis/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1k08BPx3Pscc9kcOjy0BaLtkknE" />
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1kp9ZdHppI90fA42dxYdGarVtat" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/text_Analysis" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/classes" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.16031283" />
+    <property name="project.structure.side.proportion" value="0.2363213" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.main (1)">
-    <configuration name="main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="workingWithString.main" />
-      <module name="string" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="workingWithString.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+  <component name="RunManager" selected="JUnit.All in strings">
+    <configuration name="All in strings" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="strings" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="stringAsArray.main" />
-      <module name="string" />
+    <configuration name="AmountOfClauseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="strings" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="stringAsArray.*" />
+          <option name="PATTERN" value="workingWithString.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="workingWithString.test" />
+      <option name="MAIN_CLASS_NAME" value="workingWithString.test.AmountOfClauseTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="workingWithString.test in strings" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="strings" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="workingWithString.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="workingWithString.test" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.main (1)" />
-        <item itemvalue="Application.main" />
+        <item itemvalue="JUnit.All in strings" />
+        <item itemvalue="JUnit.AmountOfClauseTest" />
+        <item itemvalue="JUnit.workingWithString.test in strings" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="ec4a1f78-8bce-4292-a721-e672b8b2f3bb" name="Default Changelist" comment="" />
-      <created>1604826012599</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1604826012599</updated>
-    </task>
-    <task id="LOCAL-00001" summary="we still working on it.">
-      <created>1604832866421</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1604832866421</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Feel great weekends behind my shoulders.">
-      <created>1604852860067</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1604852860067</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
-    <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="we still working on it." />
-    <MESSAGE value="Feel great weekends behind my shoulders." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feel great weekends behind my shoulders." />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1604830728891">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="545" y="112" width="1026" height="817" key="#Project_Structure" timestamp="1606388376009">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1604830728891" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1605021026441">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="545" y="112" width="1026" height="817" key="#Project_Structure/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1606388376009" />
+    <state x="418" y="198" width="1084" height="709" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606387876762">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605021026441" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1604853725364">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="418" y="198" width="1084" height="709" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1606387876762" />
+    <state x="791" y="278" width="526" height="456" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1606387454117">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604853725364" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1604853725364">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="791" y="278" width="526" height="456" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1606387454117" />
+    <state x="739" y="252" width="426" height="518" key="FileChooserDialogImpl" timestamp="1606387081164">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1604853725364" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1604853725364">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="739" y="252" width="426" height="518" key="FileChooserDialogImpl/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1606387081164" />
+    <state width="1920" height="321" key="GridCell.Tab.0.bottom" timestamp="1606388259099">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1604853725364" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1604853725364">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1920" height="321" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1606388259099" />
+    <state width="1920" height="321" key="GridCell.Tab.0.center" timestamp="1606388259098">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1604853725364" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1604852864481">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1920" height="321" key="GridCell.Tab.0.center/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1606388259098" />
+    <state width="1920" height="321" key="GridCell.Tab.0.left" timestamp="1606388259098">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604852864481" />
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604852811781">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1920" height="321" key="GridCell.Tab.0.left/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1606388259098" />
+    <state width="1920" height="321" key="GridCell.Tab.0.right" timestamp="1606388259099">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1604852811781" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1604852351412">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1920" height="321" key="GridCell.Tab.0.right/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1606388259098" />
+    <state x="553" y="273" width="797" height="477" key="NewModule_or_Project.wizard" timestamp="1606387087276">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1604852351412" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1604848603884">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="553" y="273" width="797" height="477" key="NewModule_or_Project.wizard/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1606387087276" />
+    <state x="449" y="175" key="SettingsEditor" timestamp="1606388266823">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1604848603884" />
+    <state x="449" y="175" key="SettingsEditor/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1606388266823" />
+    <state x="731" y="415" width="638" height="196" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606388386330">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="731" y="415" width="638" height="196" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1606388386330" />
+    <state x="766" y="284" width="709" height="518" key="new project wizard" timestamp="1606386969188">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="766" y="284" width="709" height="518" key="new project wizard/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1606386969188" />
+    <state x="623" y="238" width="672" height="678" key="search.everywhere.popup" timestamp="1606388175703">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="623" y="238" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1606388175703" />
   </component>
 </project>

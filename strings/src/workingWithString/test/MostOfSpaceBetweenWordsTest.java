@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import stringAsArray.DelSpace;
 import workingWithString.MostOfSpaceBetweenWords;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MostOfSpaceBetweenWordsTest extends DelSpace {
 

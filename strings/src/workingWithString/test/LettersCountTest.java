@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import stringAsArray.DelSpace;
 import workingWithString.LettersCount;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class LettersCountTest extends DelSpace {
 
