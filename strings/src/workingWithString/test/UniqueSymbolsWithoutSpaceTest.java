@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import stringAsArray.DelSpace;
 import workingWithString.UniqueSymbolsWithoutSpace;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class UniqueSymbolsWithoutSpaceTest extends DelSpace {
 

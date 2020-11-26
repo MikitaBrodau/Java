@@ -23,7 +23,7 @@ public class WordsLength {
     }
 
     public static String sorting(String str) {
-        List<String> list = Arrays.asList(str.split("\s+"));
+        List<String> list = Arrays.asList(str.split("\\s+"));
         list.sort(Comparator.comparingInt(String::length).reversed());
         StringBuilder sb = new StringBuilder();
         for (String s : list) sb.append(s).append(" ");

@@ -4,8 +4,7 @@ import org.junit.jupiter.api.Test;
 import stringAsArray.AmountOfNumbers;
 import stringAsArray.DelSpace;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TestT {
 
