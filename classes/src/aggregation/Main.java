@@ -18,18 +18,35 @@ public class Main {
 //        cars.get(0).refuel(40);
 //        cars.get(0).ride(); //task 2
 
-        CityList p = new CityList(new City("Warsaw",1_765_000, 517.2, true, true));
-        p.cities.add(new City("Katowice", 302_397, 164.7, false, true));
-        CityList c = new CityList(new City("Mogilev",380_440,118.5, false, true));
-        c.cities.add(new City("Minsk",1_975_000,348.8, true, true));
-        c.cities.add(new City("Babruysk",217_940, 90.02, false,false));
-        RegionList regList = new RegionList(new Region("Belarus", c.cities));
-        regList.regions.add(new Region("Poland", p.cities));
-        Goverment goverment = new Goverment("POLSKA OKUPANTI", regList);
-        System.out.println(goverment.toString()); //task 3
-        System.out.println();
-        goverment.regionCenters();
-        goverment.capital();
-        System.out.println(goverment.getAmountOfRegions());
+//        CityList p = new CityList(new City("Warsaw",1_765_000, 517.2, true, true));
+//        p.cities.add(new City("Katowice", 302_397, 164.7, false, true));
+//        CityList c = new CityList(new City("Mogilev",380_440,118.5, false, true));
+//        c.cities.add(new City("Minsk",1_975_000,348.8, true, true));
+//        c.cities.add(new City("Babruysk",217_940, 90.02, false,false));
+//        RegionList regList = new RegionList(new Region("Belarus", c.cities));
+//        regList.regions.add(new Region("Poland", p.cities));
+//        Goverment goverment = new Goverment("POLSKA OKUPANTI", regList);
+//        System.out.println(goverment.toString()); //task 3
+//        System.out.println();
+//        goverment.regionCenters();
+//        goverment.capital();
+//        System.out.println(goverment.getAmountOfRegions());
+
+//        ClientAccount clientAccount = new ClientAccount("Mikita", "Brodau");
+//        clientAccount.personalCards.add(new Card("BYN", 30.15));
+//        clientAccount.personalCards.add(new Card("usd", -230.45));
+//        clientAccount.personalCards.add(new Card("rub", 56_000));
+//        clientAccount.personalCards.add(new Card("eur", 290.30));
+//        clientAccount.personalCards.add(new Card("UAH", -1000.24));
+//        clientAccount.personalCards.get(3).setLocked(true);
+//        clientAccount.personalCards.get(0).setBalance(30000);
+//        System.out.println(clientAccount.personalCards.toString());
+//        clientAccount.getNegBalance();
+//        clientAccount.getPosBalance();
+//        clientAccount.getAllCardBalance();
+//        clientAccount.sortCardsByBalance();
+//        clientAccount.searchByBalanceInterval(-1200, 300);
+//        System.out.println(clientAccount.personalCards.toString());
+//        System.out.println(clientAccount.toString());
     }
 }
