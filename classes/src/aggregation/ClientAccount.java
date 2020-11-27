@@ -191,4 +191,3 @@ class Card implements Comparable<Card>{
         else return "You card is locked";
     }
 }
-//(([\w]+s\d{2})+(\d{2}$))

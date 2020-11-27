@@ -118,7 +118,7 @@ public class Book {
                 "\ncover = " + cover + "\n";
     }
 
-    static class BookDatabase implements DataBase {
+    static class BookDatabase implements DataBase<Book> {
         private static final List<Book> books = new ArrayList<>();
 
         public BookDatabase() {

@@ -2,7 +2,7 @@ package classes;
 
 import java.util.List;
 
-public interface DataBase {
+public interface DataBase <T> {
     void addIn_DB(Object obj);
 
     List get_DB();

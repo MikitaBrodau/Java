@@ -43,7 +43,7 @@ public class AirLine {
     }
 
 
-    public static class AirLineDataBase implements DataBase {
+    public static class AirLineDataBase implements DataBase<AirLine> {
         private static final List<AirLine> airLines = new ArrayList<>();
 
         public AirLineDataBase() {

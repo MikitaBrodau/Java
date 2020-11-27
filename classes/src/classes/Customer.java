@@ -102,7 +102,7 @@ public class Customer implements Comparable<Customer> {
         return bankAccount.toUpperCase();
     }
 
-    static class CustomerDatabase implements DataBase {
+    static class CustomerDatabase implements DataBase<Customer> {
         private static final List<Customer> customers = new ArrayList<>();
 
         public CustomerDatabase() {
