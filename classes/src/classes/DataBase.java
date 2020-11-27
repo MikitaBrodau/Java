@@ -5,7 +5,7 @@ import java.util.List;
 public interface DataBase <T> {
     void addIn_DB(Object obj);
 
-    List get_DB();
+    List<T> get_DB();
 
     void sortBy_FirstCondition(Object obj);
 
