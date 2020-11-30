@@ -2,6 +2,7 @@ package aggregation;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -48,5 +49,23 @@ public class Main {
 //        clientAccount.searchByBalanceInterval(-1200, 300);
 //        System.out.println(clientAccount.personalCards.toString());
 //        System.out.println(clientAccount.toString());
+
+//        List<Tour> list = new ArrayList<>();
+//        Scanner sc = new Scanner(System.in);
+//        list.add(new Tour("Gaaga", (float) 10, 7, 1, 1, 1));
+//        list.add(new Tour("Taiwan", (float) 3, 14, 1, 1, 3));
+//        list.add(new Tour("Tokyo", (float) 4, 10, 1, 5, 1));
+//        list.add(new Tour("Krakow", (float) 3.7, 14, 1, 3, 2));
+//        list.add(new Tour("Izolyator", (float) 0.5, 15, 1, 2));
+//        list.add(new Tour("Urugwai", (float) 4.7, 3, 3, 3, 1));
+//        list.add(new Tour("Uganda", (float) 4.8, 21, 2, 4, 3));
+//        Tour.sort(list);
+//        for (Tour t : list) {
+//            System.out.println(t.toString());
+//        }
+//        System.out.println("Please, choice your tour :)");
+//        System.out.println("Your pick is: " + list.get(sc.nextInt()-1));
+//        System.out.println("Have a good day");
+
     }
 }
