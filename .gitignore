@@ -5,3 +5,4 @@ out/
 *.iml
 tests_check/
 tests_check.*
+*.kdbx
