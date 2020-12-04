@@ -1,5 +1,10 @@
 package classes;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /* Task 7. Описать класс, представляющий треугольник.
 Предусмотреть методы для создания объектов, вычисления площади, периметра и точки пересечения медиан.  */
 public class Triangle {
@@ -20,16 +25,31 @@ public class Triangle {
     public void calculateMedian(Triangle tr) {
         double x = ((tr.a.getX() + tr.b.getX() + tr.c.getX()) / 3.0);
         double y = ((tr.a.getY() + tr.b.getY() + tr.c.getY()) / 3.0);
-        Coordinate coordinate = new Coordinate(x,y);
-        this.median = coordinate;
+        this.median = new Coordinate(x,y);
     }
-//
-//    public void calculatePerimeter(Triangle triangle) {
-//        this.perimeter = (triangle.a + triangle.b + triangle.c) / 2;
-//    }
 
-    public void calculateSquare(Triangle triangle) {
-        this.square = Math.abs((((a.getX() - c.getX()) * (b.getY() - c.getY())) - ((b.getX() - c.getX()) * (a.getY() - c.getY())))/2);
+    public void calculatePerimeter(Triangle triangle) {
+        Map<Coordinate, String> sides = calculateVector(triangle);
+        List<Double> list = new ArrayList<>();
+        for (Map.Entry<Coordinate, String> s: sides.entrySet()){
+            list.add(Math.sqrt(Math.pow(s.getKey().getX(),2) + Math.pow(s.getKey().getY(),2)));
+        }
+        this.perimeter = perimeter(list);
+    }
+    private double perimeter(List<Double> list){
+        return (list.get(0) + list.get(1) + list.get(2))/2;
+    }
+    private Map<Coordinate,String> calculateVector(Triangle tr){
+        Map<Coordinate,String> sides = new HashMap<>();
+        sides.put(new Coordinate(tr.a.getX() - tr.b.getX(), tr.a.getY()-tr.b.getY()), "AB");
+        sides.put(new Coordinate(tr.a.getX() - tr.c.getX(), tr.a.getY()-tr.c.getY()), "AC");
+        sides.put(new Coordinate(tr.b.getX() - tr.c.getX(), tr.b.getY()-tr.c.getY()), "BC");
+        return sides;
+    }
+
+    public void calculateSquare(Triangle tr) {
+        this.square = Math.abs((((tr.a.getX() - tr.c.getX()) * (tr.b.getY() - tr.c.getY()))
+                - ((tr.b.getX() - tr.c.getX()) * (tr.a.getY() - tr.c.getY())))/2);
     }
 
     @Override
