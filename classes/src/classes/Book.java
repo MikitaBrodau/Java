@@ -1,42 +1,62 @@
 package classes;
-/* Task 9. Создать класс Book, спецификация которого приведена ниже. Определить конструкторы, set- и get- методы и метод  toString().
-Создать второй класс, агрегирующий массив типа Book, с подходящими конструкторами и методами.
-Задать критерии выбора данных и вывести эти данные на консоль.
-
-Book: id, название, автор(ы), издательство, год издания, количество страниц, цена, тип переплета.
-
-Найти и вывести:
-
-a) список книг заданного автора;
-
-b) список книг, выпущенных заданным издательством;
-
-c) список книг, выпущенных после заданного года.*/
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
+/* Task 9. Создать класс Book, спецификация которого приведена ниже. Определить конструкторы, set- и get- методы и метод  toString().
+Создать второй класс, агрегирующий массив типа Book, с подходящими конструкторами и методами.
+Задать критерии выбора данных и вывести эти данные на консоль.
+Book: id, название, автор(ы), издательство, год издания, количество страниц, цена, тип переплета.
+
+Найти и вывести:
+a) список книг заданного автора;
+b) список книг, выпущенных заданным издательством;
+c) список книг, выпущенных после заданного года.*/
 public class Book {
+    enum BooksCover {
+        CARTON(1, "Carton"), SOFT_COVER(2, "Soft cover"), LEATHER(3, "Leather");
+
+        private final int booksCoverId;
+        private final String toString;
+
+        BooksCover(int bookscoverId, String toString) {
+            this.booksCoverId = bookscoverId;
+            this.toString = toString;
+        }
+
+        private static Book.BooksCover valueOf(int booksCoverId) {
+            for (Book.BooksCover booksCover : Book.BooksCover.values()) {
+                if (booksCover.booksCoverId == booksCoverId) {
+                    return booksCover;
+                }
+            }
+            throw new IllegalArgumentException("Wrong Transport");
+        }
+
+        @Override
+        public String toString() {
+            return toString;
+        }
+    }
+
     private static int amount = 0;
     private int id;
     private String name;
-    private String authors;
+    private List<String> authors;
     private String publishingHouse;
     private int year;
     private int pageAmount;
     private double price;
-    private String cover;
+    private BooksCover cover;
 
-    public Book(String name, String authors, String publishingHouse, int year, int pageAmount, double price, String cover) {
+    public Book(String name, List<String> authors, String publishingHouse, int year, int pageAmount, double price, int bookCoverId) {
         this.name = name;
         this.authors = authors;
         this.publishingHouse = publishingHouse;
         this.year = year;
         this.pageAmount = pageAmount;
         this.price = price;
-        this.cover = cover;
+        this.cover = BooksCover.valueOf(bookCoverId);
         amount++;
         this.id = amount;
     }
@@ -55,14 +75,6 @@ public class Book {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getAuthors() {
-        return authors;
-    }
-
-    public void setAuthors(String authors) {
-        this.authors = authors;
     }
 
     public String getPublishingHouse() {
@@ -97,12 +109,8 @@ public class Book {
         this.price = price;
     }
 
-    public String getCover() {
-        return cover;
-    }
-
-    public void setCover(String cover) {
-        this.cover = cover;
+    public List<String> getAuthors() {
+        return authors;
     }
 
     @Override
@@ -118,55 +126,44 @@ public class Book {
                 "\ncover = " + cover + "\n";
     }
 
-    static class BookDatabase implements DataBase<Book> {
-        private static final List<Book> books = new ArrayList<>();
 
-        public BookDatabase() {
-        }
+}
+class BookDatabase {
+    private List<Book> books = new ArrayList<>();
 
-        @Override
-        public void addIn_DB(Object obj) {
-            books.add((Book) obj);
-        }
+    public BookDatabase() {
+    }
 
-        @Override
-        public List<Book> get_DB() {
-            return books;
-        }
+    public void addIn_DB(Object obj) {
+        books.add((Book) obj);
+    }
 
-        @Override
-        public void sortBy_FirstCondition(Object author) {
-            for (Book b : books) {
-                Pattern pattern = Pattern.compile((String) author);
-                Matcher matcher = pattern.matcher(b.authors);
-                if (matcher.find()) {
-                    System.out.println(b.toString());
-                }
+    public List<Book> get_DB() {
+        return books;
+    }
+
+    public void sortBy_FirstCondition(String author) {
+        for (Book b : books) {
+            for (String s : b.getAuthors()) {
+                if(s.equals(author)) System.out.println(b.toString());
             }
         }
+    }
 
-        @Override
-        public void sortBy_SecondCondition(Object ph) {
-            for (Book b : books) {
-                Pattern pattern = Pattern.compile((String) ph);
-                Matcher matcher = pattern.matcher(b.publishingHouse);
-                if (matcher.find()) {
-                    System.out.println(b.toString());
-                }
+    public void sortBy_SecondCondition(String ph) {
+        for (Book b : books) {
+            if (b.getPublishingHouse().equals(ph)) {
+                System.out.println(b.toString());
             }
         }
+    }
 
-        @Override
-        public void sortBy_ThirdCondition(Object year) {
-            for (Book b : books) {
-                if (b.year >= (int) year) {
-                    System.out.println(b.toString());
-                }
+    public void sortBy_ThirdCondition(int year) {
+        for (Book b : books) {
+            if (b.getYear() >= year) {
+                System.out.println(b.toString());
             }
-        }
-
-        @Override
-        public void sortBy_TwoConditions(Object o1, Object o2) {
         }
     }
 }
+

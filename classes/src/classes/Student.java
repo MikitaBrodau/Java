@@ -1,16 +1,16 @@
 package classes;
 
 import java.util.Arrays;
+import java.util.List;
 
 /* Task 3. Создайте класс с именем Student, содержащий поля: фамилия и инициалы,
 номер группы, успеваемость (массив из пяти элементов). Создайте массив из десяти элементов такого типа.
-Добавьте возможность вывода фамилий и номеров групп студентов, имеющих оценки, равные только 9 или 10.
- */
+Добавьте возможность вывода фамилий и номеров групп студентов, имеющих оценки, равные только 9 или 10.*/
 public class Student {
-    private String lastName;
-    private String initials;
-    private int group;
-    private int[] performance;
+    private final String lastName;
+    private final String initials;
+    private final int group;
+    private final int[] performance;
 
     public Student(String lastName, String initials, int group, int[] performance) {
         this.lastName = lastName;
@@ -21,10 +21,7 @@ public class Student {
 
     @Override
     public String toString() {
-        if (academicGoodPerformance(this.performance))
-            return "Good Student " + "lastName = " + lastName + '\'' + " group " + group + " performance " + Arrays.toString(performance);
-        else
-            return "That was bad one = " + lastName + '\'' + " group " + group + " performance " + Arrays.toString(performance);
+            return "Student: " + lastName + " group " + group + " performance " + Arrays.toString(performance);
     }
 
     public Student(String lastName, String initials, int group) {
@@ -34,9 +31,14 @@ public class Student {
         this.performance = performanceRandom();
     }
 
-    private static boolean academicGoodPerformance(int[] performance) {
+    public static void academicGoodPerformance(List<Student> performance) {
+        for (Student s : performance) {
+            if (performanceCheck(s.performance))System.out.println("Good student: " + s.lastName + " from group number = " + s.group);
+        }
+    }
+    private static boolean performanceCheck(int[] performance){
         for (int i = 0; i < performance.length; i++) {
-            if (performance[i] < 9) return false;
+            if (performance[i] != 9 && performance[i] != 10) return false;
         }
         return true;
     }

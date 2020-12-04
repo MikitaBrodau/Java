@@ -11,6 +11,7 @@ a) список рейсов для заданного пункта назнач
 b) список рейсов для заданного дня недели;
 c) список рейсов для заданного дня недели, время вылета для которых больше заданного.*/
 
+import java.time.DayOfWeek;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -21,15 +22,36 @@ public class AirLine {
     private String destination;
     private int flightId;
     private String aircraftType;
-    private double departureTime;
-    private String dayOfWeek;
+    private Time departureTime;
+    private DayOfWeek dayOfWeek;
 
-    public AirLine(String destination, int flightId, String aircraftType, double departureTime, String dayOfWeek) {
+    public AirLine(String destination, int flightId, String aircraftType, Time departureTime, int dayOfWeek) {
         this.destination = destination.toUpperCase();
         this.flightId = flightId;
         this.aircraftType = aircraftType.toUpperCase();
         this.departureTime = departureTime;
-        this.dayOfWeek = dayOfWeek.toUpperCase();
+        this.dayOfWeek = setDayOfWeek(dayOfWeek);
+    }
+
+    private DayOfWeek setDayOfWeek(int i) {
+        for (DayOfWeek dayOfWeek : DayOfWeek.values()) {
+            if (dayOfWeek.getValue() == i) {
+                return dayOfWeek;
+            }
+        }
+        throw new IllegalArgumentException("Wrong day of week");
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public Time getDepartureTime() {
+        return departureTime;
+    }
+
+    public DayOfWeek getDayOfWeek() {
+        return dayOfWeek;
     }
 
     @Override
@@ -41,58 +63,44 @@ public class AirLine {
                 "\ndepartureTime: " + departureTime +
                 "\ndayOfWeek: " + dayOfWeek;
     }
+}
 
+class AirLineDataBase {
+    private static final List<AirLine> airLines = new ArrayList<>();
 
-    public static class AirLineDataBase implements DataBase<AirLine> {
-        private static final List<AirLine> airLines = new ArrayList<>();
+    public AirLineDataBase() {
+    }
 
-        public AirLineDataBase() {
-        }
+    public void addIn_DB(Object obj) {
+        airLines.add((AirLine) obj);
+    }
 
-        @Override
-        public void addIn_DB(Object obj) {
-            airLines.add((AirLine) obj);
-        }
+    public List<AirLine> get_DB() {
+        return airLines;
+    }
 
-        @Override
-        public List<AirLine> get_DB() {
-            return airLines;
-        }
-
-        @Override
-        public void sortBy_FirstCondition(Object Destination) {
-            for (AirLine a : airLines) {
-                Pattern pattern = Pattern.compile((String) Destination);
-                Matcher matcher = pattern.matcher(a.destination);
-                if (matcher.find()) {
-                    System.out.println(a.toString());
-                }
+    public void sortBy_FirstCondition(String destination) {
+        for (AirLine a : airLines) {
+            if (a.getDestination().equals(destination)) {
+                System.out.println(a.toString());
             }
         }
+    }
 
-        @Override
-        public void sortBy_SecondCondition(Object dayOfWeek) {
-            for (AirLine a : airLines) {
-                Pattern pattern = Pattern.compile((String) dayOfWeek);
-                Matcher matcher = pattern.matcher(a.dayOfWeek);
-                if (matcher.find()) {
-                    System.out.println(a.toString());
-                }
+    public void sortBy_SecondCondition(int dayOfWeek) {
+        for (AirLine a : airLines) {
+            if (a.getDayOfWeek().getValue() == dayOfWeek) {
+                System.out.println(a.toString());
             }
         }
+    }
 
-        @Override
-        public void sortBy_ThirdCondition(Object obj) {
-
-        }
-
-        @Override
-        public void sortBy_TwoConditions(Object dayOfWeek, Object departureTime) {
-            for (AirLine a : airLines) {
-                Pattern pattern = Pattern.compile((String) dayOfWeek);
-                Matcher matcher = pattern.matcher(a.dayOfWeek);
-                if (matcher.find()) {
-                    if (a.departureTime > (double) departureTime) System.out.println(a.toString());
+    public void sortBy_TwoConditions(int dayOfWeek, Time time) {
+        for (AirLine a : airLines) {
+            if(a.getDayOfWeek().getValue() == dayOfWeek){
+                if (a.getDepartureTime().getHours() > time.getHours()) System.out.println(a.toString());
+                else if(a.getDepartureTime().getHours() == time.getHours()){
+                    if (a.getDepartureTime().getMinutes() > time.getMinutes()) System.out.println(a.toString());
                 }
             }
         }

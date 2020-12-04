@@ -9,9 +9,7 @@ import java.util.List;
 Класс Customer: id, фамилия, имя, отчество, адрес, номер кредитной карточки, номер банковского счета.
 
 Найти и вывести:
-
 a) список покупателей в алфавитном порядке;
-
 b) список покупателей, у которых номер кредитной карточки находится в заданном интервале*/
 public class Customer implements Comparable<Customer> {
     private static int amount = 0;
@@ -102,43 +100,23 @@ public class Customer implements Comparable<Customer> {
         return bankAccount.toUpperCase();
     }
 
-    static class CustomerDatabase implements DataBase<Customer> {
-        private static final List<Customer> customers = new ArrayList<>();
 
-        public CustomerDatabase() {
-        }
+}
+class CustomerDatabase {
+    private List<Customer> customers = new ArrayList<>();
 
-        @Override
-        public void addIn_DB(Object customer) {
-            customers.add((Customer) customer);
-        }
+    public void addIn_DB(Object customer) {
+        customers.add((Customer) customer);
+    }
 
-        @Override
-        public List<Customer> get_DB() {
-            return customers;
-        }
+    public List<Customer> get_DB() {
+        return customers;
+    }
 
-        @Override
-        public void sortBy_FirstCondition(Object obj) {
-
-        }
-
-        @Override
-        public void sortBy_SecondCondition(Object obj) {
-
-        }
-
-        @Override
-        public void sortBy_ThirdCondition(Object obj) {
-
-        }
-
-        @Override
-        public void sortBy_TwoConditions(Object o1, Object o2) {
-            for (Customer c : customers) {
-                if (c.creditCardNumber > (long) o1 && c.creditCardNumber < (long) o2)
-                    System.out.println(c.toString());
-            }
+    public void sortBy_TwoConditions(long o1, long o2) {
+        for (Customer c : customers) {
+            if (c.getCreditCardNumber() > o1 && c.getCreditCardNumber() < o2)
+                System.out.println(c.toString());
         }
     }
 }
