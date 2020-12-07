@@ -66,43 +66,49 @@ public class AirLine {
 }
 
 class AirLineDataBase {
-    private static final List<AirLine> airLines = new ArrayList<>();
+    private final List<AirLine> airLines = new ArrayList<>();
 
-    public AirLineDataBase() {
-    }
+    public AirLineDataBase() { }
 
-    public void addIn_DB(Object obj) {
-        airLines.add((AirLine) obj);
-    }
-
-    public List<AirLine> get_DB() {
+    public List<AirLine> getDB() {
         return airLines;
     }
 
-    public void sortBy_FirstCondition(String destination) {
+    public List<AirLine> sortByFirstCondition(String destination) {
+        List<AirLine> list = new ArrayList<>();
         for (AirLine a : airLines) {
             if (a.getDestination().equals(destination)) {
-                System.out.println(a.toString());
+                list.add(a);
             }
         }
+        return list;
     }
 
-    public void sortBy_SecondCondition(int dayOfWeek) {
+    public List<AirLine> sortBySecondCondition(int dayOfWeek) {
+        List<AirLine> list = new ArrayList<>();
         for (AirLine a : airLines) {
             if (a.getDayOfWeek().getValue() == dayOfWeek) {
-                System.out.println(a.toString());
+                list.add(a);
             }
         }
+        return list;
     }
 
-    public void sortBy_TwoConditions(int dayOfWeek, Time time) {
+    public List<AirLine> sortByTwoConditions(int dayOfWeek, Time time) {
+        List<AirLine> list = new ArrayList<>();
         for (AirLine a : airLines) {
             if(a.getDayOfWeek().getValue() == dayOfWeek){
-                if (a.getDepartureTime().getHours() > time.getHours()) System.out.println(a.toString());
+                if (a.getDepartureTime().getHours() > time.getHours()){
+                    list.add(a);
+                }
                 else if(a.getDepartureTime().getHours() == time.getHours()){
-                    if (a.getDepartureTime().getMinutes() > time.getMinutes()) System.out.println(a.toString());
+                    if (a.getDepartureTime().getMinutes() > time.getMinutes())
+                    {
+                        list.add(a);
+                    }
                 }
             }
         }
+        return list;
     }
 }

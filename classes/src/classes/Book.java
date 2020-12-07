@@ -38,8 +38,6 @@ public class Book {
             return toString;
         }
     }
-
-    private static int amount = 0;
     private int id;
     private String name;
     private List<String> authors;
@@ -49,7 +47,7 @@ public class Book {
     private double price;
     private BooksCover cover;
 
-    public Book(String name, List<String> authors, String publishingHouse, int year, int pageAmount, double price, int bookCoverId) {
+    public Book(String name, List<String> authors, String publishingHouse, int year, int pageAmount, double price, int bookCoverId, int id) {
         this.name = name;
         this.authors = authors;
         this.publishingHouse = publishingHouse;
@@ -57,8 +55,7 @@ public class Book {
         this.pageAmount = pageAmount;
         this.price = price;
         this.cover = BooksCover.valueOf(bookCoverId);
-        amount++;
-        this.id = amount;
+        this.id = id;
     }
 
     public int getId() {
@@ -134,36 +131,40 @@ class BookDatabase {
     public BookDatabase() {
     }
 
-    public void addIn_DB(Object obj) {
-        books.add((Book) obj);
-    }
-
-    public List<Book> get_DB() {
+    public List<Book> getDB() {
         return books;
     }
 
-    public void sortBy_FirstCondition(String author) {
+    public List<Book> sortByFirstCondition(String author) {
+        List<Book> list = new ArrayList<>();
         for (Book b : books) {
             for (String s : b.getAuthors()) {
-                if(s.equals(author)) System.out.println(b.toString());
+                if(s.equals(author)){
+                    list.add(b);
+                }
             }
         }
+        return list;
     }
 
-    public void sortBy_SecondCondition(String ph) {
+    public List<Book> sortBySecondCondition(String ph) {
+        List<Book> list = new ArrayList<>();
         for (Book b : books) {
             if (b.getPublishingHouse().equals(ph)) {
-                System.out.println(b.toString());
+                list.add(b);
             }
         }
+        return list;
     }
 
-    public void sortBy_ThirdCondition(int year) {
+    public List<Book> sortByThirdCondition(int year) {
+        List<Book> list = new ArrayList<>();
         for (Book b : books) {
             if (b.getYear() >= year) {
-                System.out.println(b.toString());
+                list.add(b);
             }
         }
+        return list;
     }
 }
 

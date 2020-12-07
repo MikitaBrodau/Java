@@ -5,9 +5,9 @@ package classes;
 Счетчик имеет методы увеличения и уменьшения состояния, и метод позволяющее получить его текущее состояние.
 Написать код, демонстрирующий все возможности класса. */
 public class Counter {
-    private static int count;
-    private static int min;
-    private static int max;
+    private int count;
+    private int min;
+    private int max;
 
     public void counterIncrement() {
         if (checkInterval(count, min, max)) ++count;
@@ -28,10 +28,14 @@ public class Counter {
     }
 
     public Counter(int n, int min, int max) {
-        if (checkInterval(n, min, max)) count = n;
-        else throw new ArithmeticException("Invalid input");
-        Counter.min = min;
-        Counter.max = max;
+        if (checkInterval(n, min, max)) {
+            count = n;
+        }
+        else{
+            throw new ArithmeticException("Invalid input");
+        }
+        this.min = min;
+        this.max = max;
     }
 
     public int getCount() {

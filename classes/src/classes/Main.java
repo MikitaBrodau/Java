@@ -1,6 +1,7 @@
 package classes;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -40,10 +41,10 @@ public class Main {
 //        counter.counterIncrement();
 //        counter.counterDecrement(); //task 5
 //
-//        Time time = new Time(22, 9 , 9);
-//        System.out.println(time.toString());
-//        time.setTime(11, 15, 0);
-//        System.out.println(time.toString()); //task 6
+        Time time = new Time(25, 9 , 9);
+        System.out.println(time.toString());
+        time.setTime(11, 15, 0);
+        System.out.println(time.toString()); //task 6
 
 //        Triangle triangle = new Triangle(7.8, 10, 12.4);
 //        triangle.calculateMedian(triangle);
@@ -57,11 +58,11 @@ public class Main {
         triangle2.calculateSquare(triangle2);
         System.out.println(triangle2.toString()); //task 7
 
-//        CustomerDatabase db = new CustomerDatabase();
-//        db.addIn_DB(new Customer("Brodov", "Mikita", "Igorevich", "Belarus. Mogilev. Romanova 8-10",8000_7000_6000_5000L, "BY49RB539082112039"));
-//        db.addIn_DB(new Customer("Makoveev", "Dzmitry", "Galikovich", "Belarus. Mogilev. Menzhinka 10-12",1042_1000_4000_3000L, "BY49RB553282112039"));
-//        Collections.sort(db.get_DB());
-//        db.sortBy_TwoConditions(8000_9000_0000_0000L, 4000_0000_0000_0000L); //task 8
+        CustomerDatabase db = new CustomerDatabase();
+        db.addIn_DB(new Customer("Brodov", "Mikita", "Igorevich", "Belarus. Mogilev. Romanova 8-10",8000_7000_6000_5000L, "BY49RB539082112039"));
+        db.addIn_DB(new Customer("Makoveev", "Dzmitry", "Galikovich", "Belarus. Mogilev. Menzhinka 10-12",1042_1000_4000_3000L, "BY49RB553282112039"));
+        System.out.println(db.get_DB().toString());
+        db.sortBy_TwoConditions(8000_9000_0000_0000L, 4000_0000_0000_0000L); //task 8
 //
 //        BookDatabase books = new BookDatabase();
 //        List<String> shelock = new ArrayList<>();

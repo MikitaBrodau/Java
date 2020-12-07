@@ -30,13 +30,10 @@ public class File {
 
     public void setName(String name) {
         java.io.File file = new java.io.File("./" + directory.getName() + "/" + this.name + extension);
-
-        java.io.File file2 = new java.io.File("./" + directory.getName() + "/" + name + extension);
-        boolean success = file.renameTo(file2);
+        boolean success = file.renameTo(new java.io.File("./" + directory.getName() + "/" + name + extension));
         if (!success) {
             System.out.println("fail to rename");
-        }
-        else System.out.println("Successfully renamed. new filename: " + name + extension);
+        } else System.out.println("Successfully renamed. new filename: " + name + extension);
     }
 
     public String getExtension() {
@@ -48,10 +45,10 @@ public class File {
     }
 
     public void getContent() {
-        try (BufferedReader br = new BufferedReader(new FileReader("./" + directory.getName() + "/" + name + extension))){
-                String st;
-                while ((st = br.readLine()) != null)
-                    System.out.println(st);
+        try (BufferedReader br = new BufferedReader(new FileReader("./" + directory.getName() + "/" + name + extension))) {
+            String st;
+            while ((st = br.readLine()) != null)
+                System.out.println(st);
         } catch (IOException e) {
             e.printStackTrace();
         }

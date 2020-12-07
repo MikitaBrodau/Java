@@ -7,60 +7,60 @@ import java.util.concurrent.TimeUnit;
 Создать методы изменения времени на заданное количество часов, минут и секунд.*/
 public class Time {
     private long totalSecs = 0;
-    private long hours = 0;
-    private long minutes = 0;
-    private long seconds = 0;
 
-    public Time(int hours, int minutes, int seconds){
-        setHours(hours);
-        setMinutes(minutes);
-        this.totalSecs += seconds;
-        calculate(this.totalSecs);
+    public Time(int hours, int minutes, int seconds) {
+        this.totalSecs += seconds + (minutes*60) +(hours*3600);
     }
 
     public Time(long hours, long minutes) {
-        this.totalSecs = 0;
-        this.totalSecs = totalSecs +hours*3600;
-        this.totalSecs = totalSecs + minutes*60;
-        calculate(this.totalSecs);
+        this.totalSecs += (minutes*60) +(hours*3600);
+   
     }
 
     public long getHours() {
-        return hours;
+        return calcHours();
     }
 
     public long getMinutes() {
-        return minutes;
+        return calcMinutes();
     }
 
-    public void setTime(long hours, long minutes, long seconds){
-        this.totalSecs = 0;
-        this.totalSecs = totalSecs +hours*3600;
-        this.totalSecs = totalSecs + minutes*60;
-        this.totalSecs += seconds;
-        calculate(this.totalSecs);
+    public void setTime(long hours, long minutes, long seconds) {
+        this.totalSecs += seconds + (minutes*60) +(hours*3600);
     }
 
     public void setHours(long hours) {
-        if (this.hours != 0) return;
-        this.totalSecs = totalSecs +hours*3600;
+        if (calcHours() != 0) return;
+        this.totalSecs = totalSecs + hours * 3600;
     }
 
     public void setMinutes(long minutes) {
-        if (this.minutes != 0) return;
-        this.totalSecs = totalSecs + minutes*60;
+        if (calcMinutes() != 0) return;
+        this.totalSecs = totalSecs + minutes * 60;
     }
 
-    private void calculate(long totalSecs){
-        this.hours = totalSecs / 3600;
-        this.minutes = (totalSecs % 3600) / 60;
-        this.seconds = totalSecs % 60;
+    private long calcHours() {
+        if ((totalSecs / 3600) < 23) {
+            return (totalSecs / 3600);
+        } else return (totalSecs / 3600)%23;
     }
+
+    private long calcMinutes() {
+        return (totalSecs % 3600) / 60;
+    }
+
+    private long calcSeconds(){
+        return totalSecs%60;
+    }
+    private String check(Long time){
+        if (time<10){
+            return "0"+time;
+        }
+        else return String.valueOf(time);
+    }
+
     @Override
     public String toString() {
-        if (minutes < 10 && seconds < 10) return hours + ":0" + minutes + ":0" + seconds;
-        else if (seconds < 10) return hours + ":" + minutes + ":0" + seconds;
-        else if (minutes < 10) return hours + ":0" + minutes + ":" + seconds;
-        else return hours + ":" + minutes + ":" + seconds;
+        return check(calcHours()) + ":" + check(calcMinutes()) + ":" + check(calcSeconds());
     }
 }
