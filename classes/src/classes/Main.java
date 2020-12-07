@@ -53,7 +53,7 @@ public class Main {
 
         Triangle triangle2 = new Triangle(new Coordinate(1,1),new Coordinate(2,5),new Coordinate(5,3));
         triangle2.calculateMedian(triangle2);
-//        triangle2.calculatePerimeter(triangle2);
+        triangle2.calculatePerimeter(triangle2);
         triangle2.calculateSquare(triangle2);
         System.out.println(triangle2.toString()); //task 7
 
