@@ -31,7 +31,7 @@ public class Payment {
         int[]amount = new int[sc.nextInt()];
         for (int i = 0; i < amount.length; i++) {
             System.out.println("Product #"+(i+1)+" please set Name(first input), price(secondary input), amount(third input).");
-            payment.add(new Product(sc.nextLine(), sc.nextInt(), sc.nextInt()));
+            this.payment.add(new Product(sc.nextLine(), sc.nextInt(), sc.nextInt()));
         }
         calcSum(payment);
     }
