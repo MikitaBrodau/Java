@@ -30,10 +30,10 @@ public class Main {
         t.add(new Armor(55, "Girl leggings", "She probably really don't want to be here", 9, 3));
         t.add(new Armor(200, "Boots of wisdom", "Some mage throwed fireball, and get some too >:)", 10, 5));
         t.add(new Sword(30, "Katana", 17, """
-                Japan warrior follow the road
-                Sakura dropped out from tree
-                The rocks behind make some noise
-                And get eaten by the beast""", 3));
+                               Japan warrior follow the road
+                               Sakura dropped out from trees
+                               The rocks behind make some noise
+                               samurai get eaten by beast""", 3));
         t.add(new Axe(70, "Any Axe", 30, "", 2));
         t.add(new Axe(999, "Jesus axe", 0, "That jesus axe, don't deal damage, but may  hurt your faith feelings", 1));
         t.add(new Axe(100, "", 50, "Find that on island", 4));
@@ -45,22 +45,13 @@ public class Main {
         t.add(new Gold(10, "Shiny gold", "Crap, it's cursed", 10));
         t.add(new Sword(170, "Mad sword", 140, "cursed too", 2));
         t.add(new Sword(10, "Tooth pick", 18, "Find that in my teeth", 1));
-        t.add(new Axe(100, "Viking axe", 50, "Find that on island", 4));
-        t.add(new Axe(100, "Viking axe", 50, "Find that on island", 4));
-        t.add(new Axe(100, "Viking axe", 50, "Find that on island", 4));
-        t.add(new Axe(100, "Viking axe", 50, "Find that on island", 4));
-        t.add(new Axe(100, "Viking axe", 50, "Find that on island", 4));
-        t.add(new Axe(100, "Viking axe", 50, "Find that on island", 4));
-        t.add(new Axe(100, "Viking axe", 50, "Find that on island", 4));
-        t.add(new Axe(100, "Viking axe", 50, "Find that on island", 4));
-        t.add(new Axe(100, "Viking axe", 50, "Find that on island", 4));
-        t.add(new Axe(100, "Viking axe", 50, "Find that on island", 4));
-        t.add(new Axe(100, "Viking axe", 50, "Find that on island", 4));
-        t.add(new Axe(100, "Viking axe", 50, "Find that on island", 4));
-        t.add(new Axe(100, "Viking axe", 50, "Find that on island", 4));
-        t.add(new Axe(100, "Viking axe", 50, "Find that on island", 4));
-        t.add(new Axe(100, "Viking axe", 50, "Find that on island", 4));
-        t.add(new Axe(100, "Viking axe", 50, "Find that on island", 4));
+        t.add(new Sword(500, "Golden sword", 10, "He just for ur show off ", 1));
+        t.add(new Armor(1, "Helmet with dragon scale", "Actually that just dropped from dragon mouth", 30,1));
+        t.add(new Axe(75, "Axe of Axe(name)", 26, "Last owner name is pretty dumb", 3));
+        t.add(new Axe(40, "Spider axe", 71, "just nvm", 1));
+        t.add(new Axe(20, "Not at all Viking Axe", 9, "what is that???", 2));
+        t.add(new Axe(100, "Viking axe", 50, "Find that on island", 2));
+        System.out.println(t.size());
         for (Treasure tr : t) {
             System.out.println(tr.toString());
         }
