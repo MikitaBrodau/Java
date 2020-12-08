@@ -20,9 +20,12 @@ public class Main {
 //        dir.getFilesIn().get(0).delete();
 //        dir.getFilesIn().get(1).setName("Jerotajhoeirt");
 
-        Payment payment = new Payment();
-        payment.printPayment();
-        System.out.println(payment.getPayment().toString());
+//        Payment payment = new Payment();
+//        payment.printPayment();
+//        System.out.println(payment.getPayment().toString());
 
+//        Calendar c = new Calendar();
+//        c.getHolidays().add(new Calendar.Holiday(true, true, "All womans day", 3, 8));
+//        c.checkDay(3,8);
     }
 }
