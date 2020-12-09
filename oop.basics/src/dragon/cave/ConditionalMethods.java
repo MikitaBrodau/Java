@@ -1,10 +1,13 @@
 package dragon.cave;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class TreasuresOnSomeSum {
+public class ConditionalMethods {
 
     private static final int MAX = 12000;
     private static int[] dp = new int[MAX + 1];
@@ -60,5 +63,23 @@ public class TreasuresOnSomeSum {
             findSolution(x, list);
         }
         return treasuresOnSum;
+    }
+}
+class NameGeneration {
+    private static String genName(){
+        StringBuilder names = new StringBuilder();
+        try (BufferedReader bf = new BufferedReader(new FileReader("./resources/NameGenerator.txt"))){
+            while (bf.read() != -1)
+                names.append(bf.readLine()).append(" ");
+        }
+        catch (NullPointerException | IOException e){
+            e.printStackTrace();
+        }
+        return names.toString();
+    }
+
+    public static String getRandomName(){
+        String [] s = genName().split("\s");
+        return s[(int)Math.floor(Math.random()*s.length)] + " " + s[(int)Math.floor(Math.random()*s.length)];
     }
 }
