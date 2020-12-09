@@ -6,32 +6,16 @@ import java.util.List;
 /* Task 3. Создать объект класса Государство, используя классы Область, Район, Город.
 Методы: вывести на консоль столицу, количество областей, площадь, областные центры.*/
 public class Goverment implements populationAndSquare<Region> {
-    private RegionList regionList;
+    private List<Region> regionsList;
     private String name;
     private long population;
     private double territory;
 
-    public Goverment(String name, RegionList regions) {
+    public Goverment(String name, List<Region> regions) {
         this.name = name;
-        this.regionList = regions;
-        population(regions.regions);
-        hectare(regions.regions);
-    }
-
-    public void regionCenters() {
-        for (Region r : regionList.regions) {
-            for (City c : r.cityList) {
-                if (c.isRegionCenter()) System.out.println(c.toString());
-            }
-        }
-    }
-
-    public void capital() {
-        for (Region r : regionList.regions) {
-            for (City c : r.cityList) {
-                if (c.isCapital()) System.out.println(c.toString());
-            }
-        }
+        this.regionsList = regions;
+        population(regions);
+        hectare(regions);
     }
 
     public String getName() {
@@ -46,49 +30,69 @@ public class Goverment implements populationAndSquare<Region> {
         return territory;
     }
 
-    public void setRegionList(Region region) {
-        this.regionList.regions.add(region);
+    public List<City> capital() {
+        List<City> capitals = new ArrayList<>();
+        for (Region r :
+                regionsList) {
+            for (District d : r.districtsList) {
+                for (City c : d.cityList) {
+                    if (c.isCapital()){
+                        capitals.add(c);
+                    }
+                }
+            }
+        }
+        return capitals;
     }
 
-    public int getAmountOfRegions() {
-        return regionList.regions.size();
+    public List<City> regionCenter() {
+        List<City> regionCenters = new ArrayList<>();
+        for (Region r : regionsList) {
+            for (District d : r.districtsList) {
+                for (City c : d.cityList) {
+                    if (c.isRegionCenter()){
+                        regionCenters.add(c);
+                    }
+                }
+            }
+        }
+        return regionCenters;
     }
 
     @Override
-    public void population(List<Region> obj) {
-        for (Region r : obj) {
+    public void population(List<Region> districts) {
+        for (Region r : districts) {
             this.population += r.getPopulation();
         }
     }
 
     @Override
-    public void hectare(List<Region> obj) {
-        for (Region r : obj) {
+    public void hectare(List<Region> districts) {
+        for (Region r : districts) {
             this.territory += r.getHectare();
         }
     }
 
     @Override
     public String toString() {
-        return "\tregionList: " + regionList.regions.toString() +
+        return "\tdistrictList: " + regionsList.toString() +
                 "\tname: " + name +
                 "\tpopulation: " + population +
                 "\tterritory: " + territory;
     }
 }
-
-class Region implements populationAndSquare<City> {
+class Region implements populationAndSquare<District> {
     private String regionName;
-    public List<City> cityList;
+    public List<District> districtsList;
     private long population;
     private double hectare;
 
-    public Region(String regionName, List<City> citylist) {
+    public Region(String regionName, List<District> citylist) {
         this.regionName = regionName;
-        this.cityList = citylist;
+        this.districtsList = citylist;
         population(citylist);
         hectare(citylist);
-        for (City c : citylist) {
+        for (District c : citylist) {
             c.setRegion(regionName);
         }
     }
@@ -101,16 +105,56 @@ class Region implements populationAndSquare<City> {
         return hectare;
     }
 
-    public void setRegionName(String regionName) {
-        this.regionName = regionName;
+    @Override
+    public void population(List<District> list) {
+        for (District c : list) {
+            this.population += c.getPopulation();
+        }
     }
 
-    public void setPopulation(long population) {
-        this.population = population;
+    @Override
+    public void hectare(List<District> list) {
+        for (District c : list) {
+            this.hectare += c.getHectare();
+        }
     }
 
-    public void setHectare(double hectare) {
-        this.hectare = hectare;
+    @Override
+    public String toString() {
+        return "regionName: " + regionName +
+                "\ndistrictList: " + districtsList +
+                "\npopulation: " + population +
+                "\nhectare: " + hectare;
+    }
+}
+
+class District implements populationAndSquare<City> {
+    private String districtName;
+    public List<City> cityList;
+    private String region;
+    private long population;
+    private double hectare;
+
+    public District(String districtName, List<City> citylist) {
+        this.districtName = districtName;
+        this.cityList = citylist;
+        population(citylist);
+        hectare(citylist);
+        for (City c : citylist) {
+            c.setDistrict(districtName);
+        }
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public long getPopulation() {
+        return population;
+    }
+
+    public double getHectare() {
+        return hectare;
     }
 
     @Override
@@ -129,20 +173,10 @@ class Region implements populationAndSquare<City> {
 
     @Override
     public String toString() {
-        return "regionName: " + regionName +
+        return "regionName: " + districtName +
                 "\ncityList: " + cityList +
                 "\npopulation: " + population +
                 "\nhectare: " + hectare;
-    }
-}
-
-class RegionList {
-    public List<Region> regions = new ArrayList<>();
-    private Region region;
-
-    public RegionList(Region region) {
-        this.region = region;
-        this.regions.add(region);
     }
 }
 
@@ -151,6 +185,7 @@ class City {
     private long population;
     private double hectare;
     private String region;
+    private String district;
     private boolean capital;
     private boolean regionCenter;
 
@@ -160,6 +195,10 @@ class City {
         this.hectare = hectare;
         this.capital = capital;
         this.regionCenter = regionCenter;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
     }
 
     public long getPopulation() {
@@ -182,57 +221,8 @@ class City {
         return regionCenter;
     }
 
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
-    }
-
-    public void setPopulation(long population) {
-        this.population = population;
-    }
-
-    public void setHectare(double hectare) {
-        this.hectare = hectare;
-    }
-
-    public void setCapital(boolean capital) {
-        this.capital = capital;
-    }
-
-    public void setRegionCenter(boolean regionCenter) {
-        this.regionCenter = regionCenter;
-    }
-
     @Override
     public String toString() {
         return "\nCity: " + cityName + "\t\tpopulation: " + population + "\t\thectare: " + hectare + "\t\tregion: " + region;
-    }
-}
-
-class CityList {
-    public List<City> cities = new ArrayList<>();
-    private City city;
-
-    public CityList(City city) {
-        this.city = city;
-        this.cities.add(city);
-    }
-
-    public void capital() {
-        for (City c : cities) {
-            if (c.isCapital())
-                System.out.println(c.toString());
-        }
-    }
-
-    public void regionCenter() {
-        for (City c : cities) {
-            if (c.isRegionCenter())
-                System.out.println(c.toString());
-        }
-    }
-
-    @Override
-    public String toString() {
-        return city.toString();
     }
 }

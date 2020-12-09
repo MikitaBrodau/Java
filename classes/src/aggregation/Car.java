@@ -9,15 +9,15 @@ public class Car {
     private String type;
     private int price;
     private Engine engine;
-    private SetOfWheels wheels;
+    private Wheel [] wheels = new Wheel[4];
     private int fuel = 10;
 
-    public Car(String brand, String type, int price, Engine engine, SetOfWheels wheels) {
+    public Car(String brand, String type, int price, Engine engine, Wheel wheels) {
         this.brand = brand;
         this.type = type;
         this.price = price;
         this.engine = engine;
-        this.wheels = wheels;
+        Arrays.fill(this.wheels, wheels);
     }
 
     @Override
@@ -37,8 +37,8 @@ public class Car {
         System.out.println("Now your fuel level: " + fuel);
     }
 
-    public void wheelChange(SetOfWheels wheels) {
-        this.wheels = wheels;
+    public void wheelChange(Wheel wheel) {
+        Arrays.fill(this.wheels, wheel);
     }
 
     public void ride() {
@@ -82,18 +82,5 @@ class Wheel {
     @Override
     public String toString() {
         return "\tSeason usage: " + seasonType + "\tSize: " + Size + "\tWheel wide: " + wideOfWheel;
-    }
-}
-
-class SetOfWheels {
-    private Wheel[] wheels = new Wheel[4];
-
-    public SetOfWheels(Wheel wheel) {
-        Arrays.fill(this.wheels, wheel);
-    }
-
-    @Override
-    public String toString() {
-        return wheels.toString();
     }
 }

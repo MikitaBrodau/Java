@@ -9,18 +9,17 @@ import java.util.regex.Pattern;
 /*4. Счета. Клиент может иметь несколько счетов в банке. Учитывать возможность блокировки/разблокировки счета.
 Реализовать поиск и сортировку счетов. Вычисление общей суммы по счетам. Вычисление суммы по всем счетам,
 имеющим положительный и отрицательный балансы отдельно.*/
-public class ClientAccount implements ClientsAccountManage{
-    private static long clientsID = 0;
-    private final long clientID = clientsID + 1;
+public class ClientAccount implements ClientsAccountManage<Card> {
+    private final long clientID;
     private String firstName;
     private String lastName;
     public List<Card> personalCards = new ArrayList<>();
 
 
-    public ClientAccount(String firstName, String lastName) {
+    public ClientAccount(String firstName, String lastName, long clientID) {
         this.firstName = firstName.toUpperCase();
         this.lastName = lastName.toUpperCase();
-        clientsID++;
+        this.clientID = clientID;
     }
 
     public void setFirstName(String firstName) {
@@ -44,30 +43,34 @@ public class ClientAccount implements ClientsAccountManage{
     }
 
     @Override
-    public void getPosBalance() {
+    public List<Card> getPosBalance() {
+        List<Card> posBalance = new ArrayList<>();
         for (Card c : personalCards) {
             if (c.getBalance() > 0)
-                System.out.println("Your card: " + c.toString());
+                posBalance.add(c);
         }
+        return posBalance;
     }
 
     @Override
-    public void getNegBalance() {
-        int sum = 0;
-        for (Card c :personalCards) {
-            if(c.getBalance() < 0){
-                System.out.println("Your card: " + c.toString());
+    public List<Card> getNegBalance() {
+        List<Card> negBalance = new ArrayList<>();
+        for (Card c : personalCards) {
+            if (c.getBalance() < 0) {
+                negBalance.add(c);
             }
         }
+        return negBalance;
     }
 
     @Override
-    public void getAllCardBalance() {
+    public double getAllCardBalance() {
         double sum = 0;
-        for (Card c :personalCards) {
+        for (Card c : personalCards) {
             sum += c.getBalance();
         }
         System.out.println("Current all of cards balance: " + sum);
+        return sum;
     }
 
     @Override
@@ -78,7 +81,7 @@ public class ClientAccount implements ClientsAccountManage{
     @Override
     public void searchByBalanceInterval(int min, int max) {
         for (Card c : personalCards) {
-            if (c.getBalance() > min && c.getBalance() < max){
+            if (c.getBalance() > min && c.getBalance() < max) {
                 System.out.println("Your card: " + c.toString());
             }
         }
@@ -86,7 +89,7 @@ public class ClientAccount implements ClientsAccountManage{
 
     @Override
     public void searchByValueType(String type) {
-        for (Card c: personalCards) {
+        for (Card c : personalCards) {
             if (c.getValueType().equals(type.toUpperCase()))
                 System.out.println("Your card: " + c.toString());
         }
@@ -120,7 +123,7 @@ class Cash {
     }
 }
 
-class Card implements Comparable<Card>{
+class Card implements Comparable<Card> {
     private final long cardID;
     private final short cvv;
     private final String duration;
@@ -135,6 +138,7 @@ class Card implements Comparable<Card>{
         this.duration = setDuration();
         this.valueType = valueType.toUpperCase();
     }
+
     public Card(String valueType, double balance) {
         if (valueType.length() > 4) throw new IllegalArgumentException("Value type should content only 3 letters");
         this.cardID = (long) (1000_0000_0000_0000L + Math.floor(Math.random() * 7000_0000_0000_0000L));
@@ -155,11 +159,7 @@ class Card implements Comparable<Card>{
 
     public void setAmountOfCurrency(double amountOfCurrency) {
         if (!locked)
-        this.balance += amountOfCurrency;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
+            this.balance += amountOfCurrency;
     }
 
     public String getValueType() {

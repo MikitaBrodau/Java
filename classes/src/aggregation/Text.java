@@ -1,28 +1,35 @@
 package aggregation;
 
-public class Text {
-    String text;
+import java.util.List;
 
-    public Text(Clause clause, Word word) {
-        this.text = clause.toString() + " " + word.toString();
+public class Text {
+    List<Clause> clause;
+
+    public Text(List<Clause> clause) {
+        this.clause = clause;
+    }
+    public void addSmthInText(Word word, int clauseNum){
+        Clause words = clause.get(clauseNum);
+        words.words.add(word);
+        clause.set(clauseNum, words);
     }
 
     @Override
     public String toString() {
-        return text.toLowerCase();
+        return clause.toString().toLowerCase();
     }
 }
 
 class Clause {
-    String clause;
+    List<Word> words;
 
-    public Clause(String clause) {
-        this.clause = clause;
+    public Clause(List<Word> words) {
+        this.words = words;
     }
 
     @Override
     public String toString() {
-        return clause;
+        return words.toString();
     }
 }
 
