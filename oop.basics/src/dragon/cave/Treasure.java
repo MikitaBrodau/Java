@@ -29,6 +29,18 @@ public abstract class Treasure {
         return description;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setDmg(int dmg) {
+        this.dmg = dmg;
+    }
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -41,7 +53,8 @@ public abstract class Treasure {
     }
 
     public abstract void showDescription();
-    public static Treasure highestPrice(List<Treasure> list){
+
+    public static Treasure highestPrice(List<Treasure> list) {
         Treasure max = list.get(0);
         for (Treasure t :
                 list) {

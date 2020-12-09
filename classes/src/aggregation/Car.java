@@ -86,16 +86,14 @@ class Wheel {
 }
 
 class SetOfWheels {
-    private Wheel[] wheels = new Wheel[3];
-    private Wheel wheel;
+    private Wheel[] wheels = new Wheel[4];
 
     public SetOfWheels(Wheel wheel) {
-        this.wheel = wheel;
         Arrays.fill(this.wheels, wheel);
     }
 
     @Override
     public String toString() {
-        return wheel.toString();
+        return wheels.toString();
     }
 }
