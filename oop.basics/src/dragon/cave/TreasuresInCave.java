@@ -1,5 +1,7 @@
 package dragon.cave;
 
+import dragon.cave.treasures.*;
+
 import java.util.ArrayList;
 import java.util.List;
 

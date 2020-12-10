@@ -1,4 +1,4 @@
-package dragon.cave;
+package dragon.cave.treasures;
 
 public class Armor extends Treasure {
     private final int defence;

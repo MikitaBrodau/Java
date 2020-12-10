@@ -1,4 +1,4 @@
-package dragon.cave;
+package dragon.cave.treasures;
 
 public class Sword extends Treasure {
     private final SwordType swordType;

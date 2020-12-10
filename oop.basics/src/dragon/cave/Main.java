@@ -1,5 +1,7 @@
 package dragon.cave;
 
+import dragon.cave.treasures.Treasure;
+
 import java.util.Scanner;
 
 public class Main {
@@ -24,7 +26,7 @@ public class Main {
         switch (choice) {
             case 1 -> treasuresInCave.treasureList.forEach(Treasure -> System.out.println(Treasure.toString()));
             case 2 -> System.out.println(Treasure.highestPrice(treasuresInCave.treasureList));
-            case 3 -> ConditionalMethods.countMinCoinsUtil(onSomeSum, treasuresInCave.treasureList).forEach(Treasure -> System.out.println(Treasure.toString()));
+            case 3 -> TreasuresOnSomeSum.countMinCoinsUtil(onSomeSum, treasuresInCave.treasureList).forEach(Treasure -> System.out.println(Treasure.toString()));
         }
     }
 

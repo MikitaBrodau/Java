@@ -1,4 +1,4 @@
-package dragon.cave;
+package dragon.cave.treasures;
 
 import java.util.List;
 
