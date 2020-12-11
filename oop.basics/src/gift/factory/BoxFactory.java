@@ -11,11 +11,10 @@ public class BoxFactory {
     }
 
     public BoxFactory() {
-        userInteraction = new UserInteraction();
+        this(new UserInteraction());
     }
 
     public Box createBox() {
-        Box.getTypes();
         int type = userInteraction.requestInt("Type #");
         String color = userInteraction.requestString("color: ");
         String material = userInteraction.requestString("material: ");
