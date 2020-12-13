@@ -5,8 +5,14 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-//        Text text = new Text(new Clause("How are you, my dear"), new Word("Friend?"));
-//        System.out.println(text.toString()); //task 1
+        List<Text.Word> words = new ArrayList<>();
+        List<Text.Clause> list = new ArrayList<>();
+        words.add(new Text.Word("Hey,"));
+        words.add(new Text.Word(" you?"));
+        list.add(new Text.Clause(words));
+        Text text = new Text(list);
+        text.addSmthInText(new Text.Word("hello"), 0);
+        System.out.println(text.toString()); //task 1
 //
 //        List<Car> cars = new ArrayList<>();
 //        cars.add(new Car("Mercedes", "Sedan", 20_000, new Engine(600, "SomeBrand", "3250"), new SetOfWheels(new Wheel("Winter",18,10))));
@@ -18,19 +24,19 @@ public class Main {
 //        cars.get(0).refuel(40);
 //        cars.get(0).ride(); //task 2
 //
-        List<City> cityList = new ArrayList<>();
-        cityList.add(new City("Warsaw",1_765_000, 517.2, true, true));
-        cityList.add(new City("Katowice", 302_397, 164.7, false, true));
-        cityList.add(new City("Mogilev",380_440,118.5, false, true));
-        cityList.add(new City("Minsk",1_975_000,348.8, true, true));
-        cityList.add(new City("Babruysk",217_940, 90.02, false,false));
-        List<District> districtList = new ArrayList<>();
-        districtList.add(new District("Poland", cityList));
-        List<Region> regionList = new ArrayList<>();
-        regionList.add(new Region("POLSKA", districtList));
-        Goverment goverment = new Goverment("POLSKA OKUPANTI", regionList);
-        System.out.println(goverment.toString()); //task 3
-        System.out.println();
+//        List<City> cityList = new ArrayList<>();
+//        cityList.add(new City("Warsaw",1_765_000, 517.2, true, true));
+//        cityList.add(new City("Katowice", 302_397, 164.7, false, true));
+//        cityList.add(new City("Mogilev",380_440,118.5, false, true));
+//        cityList.add(new City("Minsk",1_975_000,348.8, true, true));
+//        cityList.add(new City("Babruysk",217_940, 90.02, false,false));
+//        List<District> districtList = new ArrayList<>();
+//        districtList.add(new District("Poland", cityList));
+//        List<Region> regionList = new ArrayList<>();
+//        regionList.add(new Region("POLSKA", districtList));
+//        Goverment goverment = new Goverment("POLSKA OKUPANTI", regionList);
+//        System.out.println(goverment.toString()); //task 3
+//        System.out.println();
 
 //
 //        ClientAccount clientAccount = new ClientAccount("Mikita", "Brodau");
