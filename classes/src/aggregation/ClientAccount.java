@@ -1,7 +1,7 @@
 package aggregation;
 
 
-import java.time.Year;
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -42,12 +42,24 @@ public class ClientAccount implements ClientsAccountManage<Card> {
         return lastName;
     }
 
+    public Card byLast4Numbers(String numbers) {
+        for (Card c : personalCards) {
+            Pattern pattern = Pattern.compile("\\d{12}" + Pattern.quote(numbers) + "$");
+            Matcher matcher = pattern.matcher(c.getCardNumber());
+            if (matcher.find()) {
+                return c;
+            }
+        }
+        throw new IllegalArgumentException("Smth wrong");
+    }
+
     @Override
     public List<Card> getPosBalance() {
         List<Card> posBalance = new ArrayList<>();
         for (Card c : personalCards) {
-            if (c.getBalance() > 0)
+            if (c.getBalance() > 0) {
                 posBalance.add(c);
+            }
         }
         return posBalance;
     }
@@ -75,11 +87,11 @@ public class ClientAccount implements ClientsAccountManage<Card> {
 
     @Override
     public void sortCardsByBalance() {
-        personalCards.sort(Card::compareTo);
+        personalCards.sort(Comparator.comparing(Card::getBalance));
     }
 
     @Override
-    public void searchByBalanceInterval(int min, int max) {
+    public void searchByBalanceInterval(double min, double max) {
         for (Card c : personalCards) {
             if (c.getBalance() > min && c.getBalance() < max) {
                 System.out.println("Your card: " + c.toString());
@@ -103,49 +115,45 @@ public class ClientAccount implements ClientsAccountManage<Card> {
     }
 }
 
-class Cash {
-    private double amountOfCash;
-    private final String valueType;
-
-    public Cash(double amountOfCash, String valueType) {
-        if (valueType.length() > 3) throw new IllegalArgumentException("Value type should content only 3 letters");
-        this.amountOfCash = amountOfCash;
-        this.valueType = valueType;
-    }
-
-    public void makeValueReplenishment(Card card, double howMuch) {
-        if (card.getValueType().equals(this.valueType)) {
-            if (howMuch <= amountOfCash) {
-                card.setAmountOfCurrency(howMuch);
-                this.amountOfCash -= howMuch;
-            }
-        }
-    }
-}
-
-class Card implements Comparable<Card> {
-    private final long cardID;
+class Card {
+    private final String cardNumber;
     private final short cvv;
-    private final String duration;
-    private double balance;
-    private final String valueType;
+    private BigDecimal balance;
+    private final String currency;
     private boolean locked;
 
     public Card(String valueType) {
         if (valueType.length() > 4) throw new IllegalArgumentException("Value type should content only 3 letters");
-        this.cardID = (long) (1000_0000_0000_0000L + Math.floor(Math.random() * 7000_0000_0000_0000L));
+        this.cardNumber = genCardNumber();
         this.cvv = (short) Math.floor(Math.random() * 999);
-        this.duration = setDuration();
-        this.valueType = valueType.toUpperCase();
+        this.currency = valueType.toUpperCase();
     }
 
-    public Card(String valueType, double balance) {
+    public Card(String valueType, BigDecimal balance) {
         if (valueType.length() > 4) throw new IllegalArgumentException("Value type should content only 3 letters");
-        this.cardID = (long) (1000_0000_0000_0000L + Math.floor(Math.random() * 7000_0000_0000_0000L));
+        this.cardNumber = genCardNumber();
         this.cvv = (short) Math.floor(Math.random() * 999);
-        this.duration = setDuration();
-        this.valueType = valueType.toUpperCase();
+        this.currency = valueType.toUpperCase();
         this.balance = balance;
+    }
+
+    public Card(String cardNumber, short cvv, BigDecimal balance, String currency) {
+        this.cardNumber = cardNumber.trim().replaceAll("\s+", "");
+        this.cvv = cvv;
+        this.balance = balance;
+        this.currency = currency;
+    }
+
+    private String genCardNumber() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 4; i++) {
+            sb.append((1000 + (int) (Math.random() * 8999)));
+        }
+        return sb.toString();
+    }
+
+    public String getCardNumber() {
+        return cardNumber;
     }
 
     public void setLocked(boolean locked) {
@@ -153,41 +161,26 @@ class Card implements Comparable<Card> {
     }
 
     public double getBalance() {
-        if (!locked) return balance;
+        if (!locked) return balance.doubleValue();
         else return 0;
     }
 
-    public void setAmountOfCurrency(double amountOfCurrency) {
-        if (!locked)
-            this.balance += amountOfCurrency;
+    public void setAmountOfCurrency(BigDecimal amountOfCurrency) {
+        if (!locked) {
+            balance = balance.add(amountOfCurrency);
+        }
     }
 
     public String getValueType() {
-        if (!locked) return valueType;
+        if (!locked) return currency;
         else return "Your card is locked";
-    }
-
-    public String setDuration() {
-        Date date = new Date();
-        Pattern pattern = Pattern.compile("\\w{3}\\s\\d{2}");
-        Matcher matcher = pattern.matcher(date.toString());
-        StringBuilder sb = new StringBuilder();
-        int year = Year.now().getValue() - 2000;
-        if (matcher.find()) sb.append(matcher.group());
-        return sb.toString() + "/" + (year + 4);
-    }
-
-    @Override
-    public int compareTo(Card c) {
-        return (int) ((int) c.getBalance() - this.balance);
     }
 
     @Override
     public String toString() {
-        if (!locked) return "cardID: " + cardID +
+        if (!locked) return "cardID: " + cardNumber +
                 "\tcvv: " + cvv +
-                "\tBalance: " + balance +
-                "\tDuration until: " + duration + "\n";
+                "\tBalance: " + balance;
         else return "You card is locked";
     }
 }

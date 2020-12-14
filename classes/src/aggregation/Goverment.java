@@ -32,15 +32,9 @@ public class Goverment implements populationAndSquare<Region> {
 
     public List<City> capital() {
         List<City> capitals = new ArrayList<>();
-        for (Region r :
-                regionsList) {
-            for (District d : r.districtsList) {
-                for (City c : d.cityList) {
-                    if (c.isCapital()){
-                        capitals.add(c);
-                    }
-                }
-            }
+        for (Region r : regionsList) {
+            capitals.addAll(r.getCapital());
+
         }
         return capitals;
     }
@@ -48,13 +42,7 @@ public class Goverment implements populationAndSquare<Region> {
     public List<City> regionCenter() {
         List<City> regionCenters = new ArrayList<>();
         for (Region r : regionsList) {
-            for (District d : r.districtsList) {
-                for (City c : d.cityList) {
-                    if (c.isRegionCenter()){
-                        regionCenters.add(c);
-                    }
-                }
-            }
+            regionCenters.addAll(r.getRegionCenter());
         }
         return regionCenters;
     }
@@ -81,6 +69,7 @@ public class Goverment implements populationAndSquare<Region> {
                 "\tterritory: " + territory;
     }
 }
+
 class Region implements populationAndSquare<District> {
     private String regionName;
     public List<District> districtsList;
@@ -119,6 +108,22 @@ class Region implements populationAndSquare<District> {
         }
     }
 
+    public List<City> getRegionCenter() {
+        List<City> districtRegCenter = new ArrayList<>();
+        for (District c : districtsList) {
+            districtRegCenter.add(c.getRegionCenter());
+        }
+        return districtRegCenter;
+    }
+
+    public List<City> getCapital() {
+        List<City> districtCapital = new ArrayList<>();
+        for (District c : districtsList) {
+            districtCapital.add(c.getCapital());
+        }
+        return districtCapital;
+    }
+
     @Override
     public String toString() {
         return "regionName: " + regionName +
@@ -155,6 +160,24 @@ class District implements populationAndSquare<City> {
 
     public double getHectare() {
         return hectare;
+    }
+
+    public City getCapital() {
+        for (City c : cityList) {
+            if (c.isCapital()) {
+                return c;
+            }
+        }
+        throw new IllegalArgumentException("smth wrong");
+    }
+
+    public City getRegionCenter() {
+        for (City c : cityList) {
+            if (c.isRegionCenter()) {
+                return c;
+            }
+        }
+        throw new IllegalArgumentException("smth wrong");
     }
 
     @Override

@@ -24,8 +24,8 @@ public class Main {
 //        payment.printPayment();
 //        System.out.println(payment.getPayment().toString());
 
-//        Calendar c = new Calendar();
-//        c.getHolidays().add(new Calendar.Holiday(true, true, "All womans day", 3, 8));
-//        c.checkDay(3,8);
+        Calendar c = new Calendar();
+        c.getHolidays().add(new Calendar.Holiday(true, true, "All womans day", 3, 8));
+        c.checkDay(3,8);
     }
 }

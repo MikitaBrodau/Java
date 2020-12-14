@@ -1,5 +1,6 @@
 package aggregation;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,8 +11,8 @@ public class Main {
         words.add(new Text.Word("Hey,"));
         words.add(new Text.Word(" you?"));
         list.add(new Text.Clause(words));
-        Text text = new Text(list);
-        text.addSmthInText(new Text.Word("hello"), 0);
+        Text text = new Text("tired", list);
+        text.addSmthInText("hello", 0);
         System.out.println(text.toString()); //task 1
 //
 //        List<Car> cars = new ArrayList<>();
@@ -39,22 +40,23 @@ public class Main {
 //        System.out.println();
 
 //
-//        ClientAccount clientAccount = new ClientAccount("Mikita", "Brodau");
-//        clientAccount.personalCards.add(new Card("BYN", 30.15));
-//        clientAccount.personalCards.add(new Card("usd", -230.45));
-//        clientAccount.personalCards.add(new Card("rub", 56_000));
-//        clientAccount.personalCards.add(new Card("eur", 290.30));
-//        clientAccount.personalCards.add(new Card("UAH", -1000.24));
+//        ClientAccount clientAccount = new ClientAccount("Mikita", "Brodau", 2);
+//        clientAccount.personalCards.add(new Card("BYN", BigDecimal.valueOf(30.15)));
+//        clientAccount.personalCards.add(new Card("1234567891234567",(short) 666, BigDecimal.valueOf(30.15), "BYN"));
+//        clientAccount.personalCards.add(new Card("usd", BigDecimal.valueOf(-230.45)));
+//        clientAccount.personalCards.add(new Card("rub", BigDecimal.valueOf(56_000)));
+//        clientAccount.personalCards.add(new Card("eur", BigDecimal.valueOf(290.30)));
+//        clientAccount.personalCards.add(new Card("UAH", BigDecimal.valueOf(-1000.24)));
 //        clientAccount.personalCards.get(3).setLocked(true);
-//        clientAccount.personalCards.get(0).setBalance(30000);
 //        System.out.println(clientAccount.personalCards.toString());
 //        clientAccount.getNegBalance();
 //        clientAccount.getPosBalance();
 //        clientAccount.getAllCardBalance();
 //        clientAccount.sortCardsByBalance();
-//        clientAccount.searchByBalanceInterval(-1200, 300);
+//        clientAccount.searchByBalanceInterval(-1200,300);
 //        System.out.println(clientAccount.personalCards.toString());
 //        System.out.println(clientAccount.toString());
+//        System.out.println(clientAccount.byLast4Numbers("4567"));
 
 //        List<Tour> list = new ArrayList<>();
 //        Scanner sc = new Scanner(System.in);

@@ -16,8 +16,7 @@ public class Calendar {
     }
 
     public void checkDay(int month, int day) {
-        for (Holiday h :
-                holidays) {
+        for (Holiday h : holidays) {
             if (h.monthDay.getDayOfMonth() == day && h.monthDay.getMonth().getValue() == month) {
                 System.out.println(h.toString());
             }
@@ -46,4 +45,3 @@ public class Calendar {
         }
     }
 }
-
