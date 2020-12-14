@@ -42,10 +42,10 @@ public class SweetFactory {
         throw new IllegalArgumentException("Wrong value.");
     }
 
-    private String types(GetSweetType [] arr){
+    private String types(GetSweetType[] arr) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < arr.length; i++) {
-            sb.append(i+1).append(". ").append(arr[i].getTxt()).append("\n");
+            sb.append(i + 1).append(". ").append(arr[i].getTxt()).append("\n");
         }
         return sb.toString();
     }
