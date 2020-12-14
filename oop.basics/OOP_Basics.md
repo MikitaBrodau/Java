@@ -223,7 +223,7 @@ consistent: значение equals()должно изменяться толь�
 	Class ClientSortByAmountOfOrders implements Comparator<Client>{
     		@Override
             	public int compare (Client c1, Client c2){
-                	return c1.ordersAmount - c2.ordersAmount;
+                	return Integer.compare(o1.orderAmounts, o2.orderAmounts);
     	}
     }
 ```
