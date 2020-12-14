@@ -11,23 +11,43 @@ public class UserInteraction {
         scanner = new Scanner(System.in);
         output = new PrintStream(System.out);
     }
+
     public String requestString(String prompt) {
         output.print(prompt);
-        return scanner.nextLine();
+        while (true) {
+            String check = scanner.nextLine();
+            if (check.isEmpty()) {
+                continue;
+            }
+            return check;
+        }
     }
 
     public int requestInt(String prompt) {
         output.print(prompt);
-        return scanner.nextInt();
+        while (true) {
+            Integer check = tryRequestInt();
+            if (check == null) {
+                continue;
+            }
+            return check;
+        }
     }
 
-    public boolean requestContinue(String prompt){
+    private Integer tryRequestInt() {
+        try {
+            return Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            return null;
+        }
+    }
+
+    public boolean requestContinue(String prompt) {
         output.print(prompt);
         String answer = scanner.nextLine();
-        if (answer.toLowerCase().equals("n")){
+        if (answer.equalsIgnoreCase("n")) {
             return true;
-        }
-        else if(answer.toLowerCase().equals("y") || answer.equals("")){
+        } else if (answer.equalsIgnoreCase("y") || answer.equals("")) {
             return false;
         }
         throw new IllegalArgumentException("smth wrong");

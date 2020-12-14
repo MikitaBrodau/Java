@@ -17,36 +17,37 @@ public class Flour extends Pastry {
                 .add("id: " + flourType.getId()).add("type: " + flourType.getTxt()).toString();
     }
 
-    public static void getTypes() {
-        for (FlourType f : FlourType.values()) {
-            System.out.println(f.toString());
+    public static FlourType[] values() {
+        return FlourType.values();
+    }
+
+    enum FlourType implements GetSweetType {
+        WAFFLE(1, "Waffle"), COOKIE(2, "Cookie"), PIE(3, "Pie"), DONUTS(4, "Donuts"),
+        ECLAIR(5, "Pastries"), CHEESECAKE(6, "Cheesecake"), MUFFIN(7, "Muffin");
+        private final int id;
+        private final String txt;
+
+        @Override
+        public int getId() {
+            return id;
+        }
+
+        @Override
+        public String getTxt() {
+            return txt;
+        }
+
+        FlourType(int id, String txt) {
+            this.id = id;
+            this.txt = txt;
+        }
+
+        public static FlourType valueOf(int id) {
+            for (FlourType f : FlourType.values()) {
+                if (id == f.id) return f;
+            }
+            throw new IllegalArgumentException("Wrong value: " + id);
         }
     }
 }
 
-enum FlourType {
-    WAFFLE(1, "Waffle"), COOKIE(2, "Cookie"), PIE(3, "Pie"), DONUTS(4, "Donuts"),
-    ECLAIR(5, "Pastries"), CHEESECAKE(6, "Cheesecake"), MUFFIN(7, "Muffin");
-    private final int id;
-    private final String txt;
-
-    public int getId() {
-        return id;
-    }
-
-    public String getTxt() {
-        return txt;
-    }
-
-    FlourType(int id, String txt) {
-        this.id = id;
-        this.txt = txt;
-    }
-
-    public static FlourType valueOf(int id) {
-        for (FlourType f : FlourType.values()) {
-            if (id == f.id) return f;
-        }
-        throw new IllegalArgumentException("Wrong value: " + id);
-    }
-}

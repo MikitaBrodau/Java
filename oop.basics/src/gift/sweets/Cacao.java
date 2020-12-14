@@ -16,35 +16,36 @@ public class Cacao extends Pastry {
                 .add("id: " + cacaoType.getId()).add("type: " + cacaoType.getTxt()).toString();
     }
 
-    public static void getTypes() {
-        for (CacaoType c : CacaoType.values()) {
-            System.out.println(c.toString());
+    public static CacaoType[] values() {
+        return CacaoType.values();
+    }
+
+    enum CacaoType implements GetSweetType {
+        Butter(1, "butter"), Beans(2, "Beans"), POWDER(3, "Powder");
+        private final int id;
+        private final String txt;
+
+        @Override
+        public int getId() {
+            return id;
+        }
+
+        @Override
+        public String getTxt() {
+            return txt;
+        }
+
+        CacaoType(int id, String txt) {
+            this.id = id;
+            this.txt = txt;
+        }
+
+        public static CacaoType valueOf(int id) {
+            for (CacaoType c : CacaoType.values()) {
+                if (id == c.id) return c;
+            }
+            throw new IllegalArgumentException("Wrong value: " + id);
         }
     }
 }
 
-enum CacaoType {
-    Butter(1, "butter"), Beans(2, "Beans"), POWDER(3, "Powder");
-    private final int id;
-    private final String txt;
-
-    public int getId() {
-        return id;
-    }
-
-    public String getTxt() {
-        return txt;
-    }
-
-    CacaoType(int id, String txt) {
-        this.id = id;
-        this.txt = txt;
-    }
-
-    public static CacaoType valueOf(int id) {
-        for (CacaoType c : CacaoType.values()) {
-            if (id == c.id) return c;
-        }
-        throw new IllegalArgumentException("Wrong value: " + id);
-    }
-}

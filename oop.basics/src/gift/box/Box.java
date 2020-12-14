@@ -18,7 +18,11 @@ public class Box {
     @Override
     public String toString() {
         return new StringJoiner("", Box.class.getSimpleName() + ":", ".")
-                .add("\tType: " + boxType.getTxt()).add("\tColor: " + color).add("\tMaterial: " + material).toString();
+                .add("\tType: " + boxType.getTxt()).add("\t\tColor: " + color).add("\tMaterial: " + material).toString();
+    }
+
+    public static BoxType[] values() {
+        return BoxType.values();
     }
 
     public enum BoxType {

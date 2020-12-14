@@ -15,37 +15,38 @@ public class SweetFactory {
     }
 
     public Sweet createSweet() {
-        System.out.println("#1" + "\tSugary.");
-        System.out.println("#2" + "\tFlour.");
-        System.out.println("#3" + "\tChocolate.");
-        System.out.println("#3" + "\tCacao.");
+
         int sweet = userInteraction.requestInt("Good day. please pick next sweet type: ");
         switch (sweet) {
             case 1 -> {
-                Sugary.getTypes();
-                int typeSugary = userInteraction.requestInt("Please choose type: ");
+                int typeSugary = userInteraction.requestInt(types(Sugary.values()) + "Please choose type: ");
                 int amount = userInteraction.requestInt("Amount: ");
                 return new Sweet(new Sugary(typeSugary), amount);
             }
             case 2 -> {
-                Flour.getTypes();
-                int typeFlour = userInteraction.requestInt("Please choose type: ");
+                int typeFlour = userInteraction.requestInt(types(Flour.values()) + "Please choose type: ");
                 int amount = userInteraction.requestInt("Amount: ");
                 return new Sweet(new Flour(typeFlour), amount);
             }
             case 3 -> {
-                Chocolate.getTypes();
-                int typeChocolate = userInteraction.requestInt("Please choose type: ");
+                int typeChocolate = userInteraction.requestInt(types(Chocolate.values()) + "Please choose type: ");
                 int amount = userInteraction.requestInt("Amount: ");
                 return new Sweet(new Chocolate(typeChocolate), amount);
             }
             case 4 -> {
-                Cacao.getTypes();
-                int typeCacao = userInteraction.requestInt("Please choose type: ");
+                int typeCacao = userInteraction.requestInt(types(Cacao.values()) + "Please choose type: ");
                 int amount = userInteraction.requestInt("Amount: ");
                 return new Sweet(new Cacao(typeCacao), amount);
             }
         }
         throw new IllegalArgumentException("Wrong value.");
+    }
+
+    private String types(GetSweetType [] arr){
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < arr.length; i++) {
+            sb.append(i+1).append(". ").append(arr[i].getTxt()).append("\n");
+        }
+        return sb.toString();
     }
 }

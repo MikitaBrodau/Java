@@ -10,10 +10,8 @@ public class Sugary extends Pastry {
         this.sugaryType = SugaryType.valueOf(sugaryTypeId);
     }
 
-    public static void getTypes() {
-        for (SugaryType s : SugaryType.values()) {
-            System.out.println(s.toString());
-        }
+    public static SugaryType[] values() {
+        return SugaryType.values();
     }
 
     @Override
@@ -21,31 +19,35 @@ public class Sugary extends Pastry {
         return new StringJoiner(", ", Sugary.class.getSimpleName() + "[", "]")
                 .add("id: " + sugaryType.getId()).add("type: " + sugaryType.getTxt()).toString();
     }
-}
 
-enum SugaryType {
-    JELLY(1, "Jelly"), CAKE(2, "Cake"), PIE(3, "Pie"), CUPCAKES(4, "Cupcakes"),
-    PASTRIES(5, "Pastries"), IRIS(6, "Iris"), ZEPHYR(7, "Zephyr"), CANDY(8, "Candy");
-    private final int id;
-    private final String txt;
+    enum SugaryType implements GetSweetType {
+        JELLY(1, "Jelly"), CAKE(2, "Cake"), PIE(3, "Pie"), CUPCAKES(4, "Cupcakes"),
+        PASTRIES(5, "Pastries"), IRIS(6, "Iris"), ZEPHYR(7, "Zephyr"), CANDY(8, "Candy");
+        private final int id;
+        private final String txt;
 
-    SugaryType(int id, String txt) {
-        this.id = id;
-        this.txt = txt;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getTxt() {
-        return txt;
-    }
-
-    public static SugaryType valueOf(int id) {
-        for (SugaryType s : SugaryType.values()) {
-            if (id == s.id) return s;
+        SugaryType(int id, String txt) {
+            this.id = id;
+            this.txt = txt;
         }
-        throw new IllegalArgumentException("Wrong value: " + id);
+
+        @Override
+        public int getId() {
+            return id;
+        }
+
+        @Override
+        public String getTxt() {
+            return txt;
+        }
+
+        public static SugaryType valueOf(int id) {
+            for (SugaryType s : SugaryType.values()) {
+                if (id == s.id) return s;
+            }
+            throw new IllegalArgumentException("Wrong value: " + id);
+        }
     }
 }
+
+
