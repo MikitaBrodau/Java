@@ -16,7 +16,7 @@ public class Main {
                     "2.Show most expensive one.\t3.Pick treasuresInCave on your sum.");
             System.out.println("Please enter 1/2/3");
             choice = sysIn(1);
-            if (choice == 3){
+            if (choice == 3) {
                 System.out.println("Okay, now u should say how big is ur wallet. But don't let me take more then 10k");
                 onSomeSum = sysIn(2);
             }
@@ -37,16 +37,16 @@ public class Main {
             case 1 -> {
                 if (sc.hasNextInt()) {
                     int c = sc.nextInt();
-                    if(c < 4 && c > 0) return c;
+                    if (c < 4 && c > 0) return c;
                 }
             }
             case 2 -> {
-                while (sc.hasNextInt()) {
-                    int c = sc.nextInt();
-                    if(c > 10000) return 9999;
-                } return 0;
-            }
+                if (sc.hasNextInt()) {
+                    int s = sc.nextInt();
+                    if (s < 10000) return s;
+                }
 
+            }
         }
         throw new IllegalArgumentException("smth wrong");
     }
