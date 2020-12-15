@@ -1,17 +1,23 @@
 package File;
 
+import gift.UserInteraction;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /* Создать класс Payment с внутренним классом, с помощью объектов которого можно сформировать покупку из нескольких товаров.*/
 
 public class Payment {
     private List<Product> payment = new ArrayList<>();
     private int summaryPrice;
+    private final UserInteraction userInteraction;
 
     public List<Product> getPayment() {
         return payment;
+    }
+
+    public UserInteraction getUserInteraction() {
+        return userInteraction;
     }
 
     public void setPayment(List<Product> payment) {
@@ -28,16 +34,23 @@ public class Payment {
 
     @Override
     public String toString() {
-        return "Payment: " + payment +
-                "\n\tsummaryPrice=" + summaryPrice +'$';
+        StringBuilder sb = new StringBuilder();
+        sb.append("===================================================\n");
+        for (Product p : payment) {
+            sb.append("Product name: ").append(p.name).append("\tAmount ").append(p.amount).append("\tTotal price = ")
+                    .append(p.price * p.amount).append("\n");
+        }
+        sb.append("===================================================\n");
+        sb.append("Amount of payments: ").append(payment.size()).append("\tTotal price = ").append(summaryPrice).append('$');
+        return sb.toString();
     }
 
     static class Product {
-        private String name;
-        private int price;
-        private int amount;
+        private final String name;
+        private final int price;
+        private final int amount;
 
-        public Product(String name, int price,int amount) {
+        public Product(String name, int price, int amount) {
             this.name = name;
             this.price = price;
             this.amount = amount;
@@ -49,41 +62,17 @@ public class Payment {
         }
     }
 
+    public Payment(UserInteraction userInteraction){
+        this.userInteraction = userInteraction;
+    }
+
     public Payment() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Hi, set amount of payments");
-        try {
-            int[] size = new int[sc.nextInt()];
-            for (int p : size) {
-                System.out.print("Name of position: ");
-                String name = sc.next();
-                System.out.print("Price: ");
-                int price = sc.nextInt();
-                System.out.print("Amount: ");
-                int amount = sc.nextInt();
-                payment.add(new Product(name, price, amount));
-                this.summaryPrice += price * amount;
+        this.userInteraction = new UserInteraction();
+    }
+
+    private void calcSum (List < Product > list) {
+            for (Product p : list) {
+                this.summaryPrice += p.price * p.amount;
             }
-        } catch (NumberFormatException e) {
-            System.out.println("Number format Exception. Please try again.");
-        } catch (NegativeArraySizeException e) {
-            System.out.println("You can't set negative arr size");
-        } catch (NullPointerException e) {
-            System.out.println("Array is not exist");
-            calcSum(payment);
         }
     }
-    private void calcSum(List<Product> list){
-        for (Product p : list) {
-            this.summaryPrice += p.price * p.amount;
-        }
-    }
-    public void printPayment(){
-        System.out.println("======================================================================");
-        for (Product p : payment) {
-            System.out.println("Product name: " + p.name + "\tAmount " + p.amount + "\tTotal price = " + (p.price*p.amount));
-        }
-        System.out.println("======================================================================");
-        System.out.println("Amount of payments: " + payment.size() + "\tTotal price = " + summaryPrice + '$');
-    }
-}

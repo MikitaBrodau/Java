@@ -5,22 +5,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calendar {
-    private List<Holiday> holidays = new ArrayList<>();
+    private List<Holiday> holidays;
+
+    public void addHolidays(boolean isWeekend, boolean isHoliday, String description, int month, int monthDay) {
+        this.holidays.add(new Holiday(isWeekend, isHoliday, description, month, monthDay));
+    }
 
     public List<Holiday> getHolidays() {
         return holidays;
+    }
+
+    public Calendar() {
+        this.holidays = new ArrayList<>();
+    }
+
+    public Calendar(List<Holiday> holidays) {
+        this.holidays = holidays;
     }
 
     public void setHolidays(List<Holiday> holidays) {
         this.holidays = holidays;
     }
 
-    public void checkDay(int month, int day) {
-        for (Holiday h : holidays) {
-            if (h.monthDay.getDayOfMonth() == day && h.monthDay.getMonth().getValue() == month) {
-                System.out.println(h.toString());
+    public Holiday getHolidayDay(int month, int day) {
+        for (Holiday holiday : holidays) {
+            if (holiday.monthDay.getDayOfMonth() == day && holiday.monthDay.getMonth().getValue() == month) {
+                return holiday;
             }
         }
+        return null;
     }
 
     static class Holiday {

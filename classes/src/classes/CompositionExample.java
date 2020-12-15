@@ -3,12 +3,16 @@ package classes;
 public class CompositionExample {
 
     static class A {
-
+        void m(A a){
+            System.out.println("god");
+        }
     }
 
     static class B extends A {
 
     }
+
+    static class J extends B {}
 
     static class C {
         void m(A a) {
@@ -31,12 +35,10 @@ public class CompositionExample {
     }
 
     public static void main(String[] args) {
-        C c = new D();
+        J b = new J();
+        if (b instanceof A){
+            b.m(b);
+        }
 
-        B b = new B();
-        A a = b;
-
-        c.m(a);
-        c.m(b);
     }
 }

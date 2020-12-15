@@ -1,8 +1,6 @@
 package File;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 /*Создать объект класса Текстовый файл, используя классы Файл, Директория.
 Методы: создать, переименовать, вывести на консоль содержимое, дополнить, удалить.*/
 
@@ -80,45 +78,3 @@ public class File {
     }
 }
 
-class Directory {
-    private List<File> filesIn = new ArrayList<>();
-    private String name;
-
-    public Directory(String name) {
-        this.name = name;
-        java.io.File file = new java.io.File(name);
-        file.mkdir();
-    }
-
-    public List<File> getFilesIn() {
-        return filesIn;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-}
-
-class TextFile extends File {
-    private final String txtExtension = ".txt";
-    private String content;
-
-    public TextFile(String name) {
-        super(name);
-        setExtension(txtExtension);
-    }
-
-    public TextFile(String name, String content) {
-        super(name);
-        setExtension(txtExtension);
-        this.content = content;
-    }
-
-    public String getTxtExtension() {
-        return txtExtension;
-    }
-}
