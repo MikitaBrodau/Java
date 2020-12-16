@@ -18,10 +18,10 @@ public class Main {
         List<Gift> gifts = new ArrayList<>();
 
         while (true) {
-            if (ui.requestContinue("Do you want continue?\"Y/N\"")) break;
             Sweet sweet = sweetFactory.createSweet();
             Box box = boxFactory.createBox();
             gifts.add(new Gift(sweet, box));
+            if (ui.requestContinue("Do you want continue?\"Y/N\"")) break;
         }
         gifts.forEach(Gift -> System.out.println("Gift = " + Gift));
     }

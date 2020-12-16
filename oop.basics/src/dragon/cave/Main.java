@@ -12,7 +12,6 @@ public class Main {
         UserInteraction ui = new UserInteraction();
         TreasuresInCave treasuresInCave = new TreasuresInCave();
         while (true) {
-            List<Treasure> list;
             int choice = ui.requestInt("""
                     pick your action
                     1.all treasures
@@ -24,8 +23,8 @@ public class Main {
                 case (2) -> System.out.println(TreasuresOnSomeSum.highestPrice(treasuresInCave.treasureList));
                 case (3) -> {
                     int sum = ui.requestInt("How much coins do you have: ");
-                    list = TreasuresOnSomeSum.countMinCoinsUtil(sum, treasuresInCave.treasureList);
-                    list.forEach(System.out::println);
+                    List<Treasure> list = new ArrayList<>(TreasuresOnSomeSum.countMinCoinsUtil(sum, treasuresInCave.treasureList));
+                    System.out.println(list.toString());
                 }
             }
             if (ui.requestContinue("Do you want continue?Y/N: ")) break;
