@@ -61,7 +61,7 @@ public class SweetFactory {
 
     private int typesValidation(GetSweetType[] arr){
         int type = userInteraction.requestInt(types(arr) + "Please choose type: ");
-        if (type < arr.length) return type;
+        if (type <= arr.length) return type;
         else return typesValidation(arr);
     }
 }

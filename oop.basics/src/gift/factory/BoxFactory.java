@@ -31,7 +31,7 @@ public class BoxFactory {
     }
     private int typesValidation(Box.BoxType[] arr){
         int type = userInteraction.requestInt(types(arr) + "Please choose type: ");
-        if (type < arr.length) return type;
+        if (type <= arr.length) return type;
         else return typesValidation(arr);
     }
 }
