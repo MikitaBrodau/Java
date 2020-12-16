@@ -10,8 +10,8 @@ public class TreasuresOnSomeSum {
 
     private static final int MAX = 12000;
     private static final int[] dp = new int[MAX + 1];
-    private static final List<Treasure> done = new ArrayList<>();
-    private static final List<Treasure> treasuresOnSum = new ArrayList<>();
+    private static List<Treasure> done = new ArrayList<>();
+    private static List<Treasure> treasuresOnSum = new ArrayList<>();
 
     private static int countMinCoins(int n, List<Treasure> list) {
         if (n == 0) {

@@ -7,7 +7,7 @@ public class Gold extends Treasure {
     public Gold(int price, String name, int amount) {
         super(price, name);
         this.amount = amount;
-        this.totalPrice = amount * price;
+        this.totalPrice = amount;
     }
 
     @Override

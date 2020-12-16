@@ -23,8 +23,9 @@ public class Main {
                 case (2) -> System.out.println(TreasuresOnSomeSum.highestPrice(treasuresInCave.treasureList));
                 case (3) -> {
                     int sum = ui.requestInt("How much coins do you have: ");
-                    List<Treasure> list = new ArrayList<>(TreasuresOnSomeSum.countMinCoinsUtil(sum, treasuresInCave.treasureList));
-                    System.out.println(list.toString());
+                    for (Treasure t :TreasuresOnSomeSum.countMinCoinsUtil(sum, treasuresInCave.treasureList)) {
+                        System.out.println(t.toString());
+                    }
                 }
             }
             if (ui.requestContinue("Do you want continue?Y/N: ")) break;

@@ -16,7 +16,13 @@ public class SweetFactory {
 
     public Sweet createSweet() {
 
-        int sweet = userInteraction.requestInt("Good day. please pick next sweet type: ");
+        int sweet = userInteraction.requestInt("""
+                You have next sweets:\s
+                1. Sugary
+                2. Flour
+                3. Chocolate
+                4. Cacao
+                Choose one:\s""");
         switch (sweet) {
             case 1 -> {
                 int typeSugary = userInteraction.requestInt(types(Sugary.values()) + "Please choose type: ");
