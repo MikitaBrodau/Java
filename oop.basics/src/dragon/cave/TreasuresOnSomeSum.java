@@ -9,9 +9,9 @@ import java.util.List;
 public class TreasuresOnSomeSum {
 
     private static final int MAX = 12000;
-    private static int[] dp = new int[MAX + 1];
-    private static List<Treasure> done = new ArrayList<>();
-    private static List<Treasure> treasuresOnSum = new ArrayList<>();
+    private static final int[] dp = new int[MAX + 1];
+    private static final List<Treasure> done = new ArrayList<>();
+    private static final List<Treasure> treasuresOnSum = new ArrayList<>();
 
     private static int countMinCoins(int n, List<Treasure> list) {
         if (n == 0) {
@@ -22,7 +22,7 @@ public class TreasuresOnSomeSum {
         if (dp[n] != -1) {
             return dp[n];
         }
-        int ret = Treasure.highestPrice(list).getPrice();
+        int ret = highestPrice(list).getPrice();
 
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).getPrice() <= n && !done.contains(list.get(i))) {
@@ -55,13 +55,21 @@ public class TreasuresOnSomeSum {
     static List<Treasure> countMinCoinsUtil(int x, List<Treasure> list) {
         Arrays.fill(dp, -1);
         int isPossible = countMinCoins(x, list);
-        // If no solution exists
         if (isPossible == Integer.MAX_VALUE) {
             System.out.print("-1");
         } else {
             findSolution(x, list);
         }
         return treasuresOnSum;
+    }
+
+    public static Treasure highestPrice(List<Treasure> list) {
+        Treasure max = list.get(0);
+        for (Treasure t :
+                list) {
+            if (t.getPrice() > max.getPrice()) max = t;
+        }
+        return max;
     }
 }
 

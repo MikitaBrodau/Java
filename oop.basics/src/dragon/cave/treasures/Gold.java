@@ -4,15 +4,10 @@ public class Gold extends Treasure {
     private final int totalPrice;
     private final int amount;
 
-    public Gold(int price, String name, String description, int amount) {
-        super(price, name, description);
+    public Gold(int price, String name, int amount) {
+        super(price, name);
         this.amount = amount;
         this.totalPrice = amount * price;
-    }
-
-    @Override
-    public void showDescription() {
-        System.out.println(getDescription());
     }
 
     @Override

@@ -1,7 +1,5 @@
 package dragon.cave.treasures;
 
-import java.util.List;
-
 public abstract class Treasure {
     private final int price;
     private final String name;
@@ -21,8 +19,9 @@ public abstract class Treasure {
         this.description = description;
     }
 
-    public int getDmg() {
-        return dmg;
+    public Treasure(int price, String name) {
+        this.price = price;
+        this.name = name;
     }
 
     public String getDescription() {
@@ -33,16 +32,8 @@ public abstract class Treasure {
         return price;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void setDmg(int dmg) {
         this.dmg = dmg;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     @Override
@@ -50,17 +41,6 @@ public abstract class Treasure {
         return "price:" + price +
                 "\tname: " + name +
                 "\tdmg: " + dmg;
-    }
-
-    public abstract void showDescription();
-
-    public static Treasure highestPrice(List<Treasure> list) {
-        Treasure max = list.get(0);
-        for (Treasure t :
-                list) {
-            if (t.price > max.price) max = t;
-        }
-        return max;
     }
 
 }

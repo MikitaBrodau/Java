@@ -9,8 +9,8 @@ public class Axe extends Treasure {
     }
 
     @Override
-    public void showDescription() {
-        System.out.println(getDescription());
+    public String getDescription() {
+        return super.getDescription();
     }
 
     @Override
@@ -20,7 +20,8 @@ public class Axe extends Treasure {
 }
 
 enum AxeType {
-    BARDICHE(1, "Bardiche"), DOUBLE_SIDE(2, "Viking double-side"), TOMAHAWK(3, "Tomahawk"), BATTLE_AXE(4, "Viking battle axe");
+    BARDICHE(1, "Bardiche"), DOUBLE_SIDE(2, "Viking double-side"), TOMAHAWK(3, "Tomahawk"),
+    BATTLE_AXE(4, "Viking battle axe");
     int type;
     String txt;
 

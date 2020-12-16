@@ -11,8 +11,8 @@ public class Armor extends Treasure {
     }
 
     @Override
-    public void showDescription() {
-        System.out.println(getDescription());
+    public String getDescription() {
+        return super.getDescription();
     }
 
     @Override
