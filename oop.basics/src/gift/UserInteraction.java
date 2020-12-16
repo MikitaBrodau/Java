@@ -30,7 +30,7 @@ public class UserInteraction {
         output.print(prompt);
         while (true) {
             Integer check = tryRequestInt();
-            if (check == null || check < 0) {
+            if (check == null || check <= 0) {
                 System.out.println("wrong input");
                 continue;
             }
