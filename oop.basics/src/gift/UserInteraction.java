@@ -19,7 +19,7 @@ public class UserInteraction {
         while (true) {
             String check = scanner.nextLine();
             if (check.isEmpty() || check.matches("\\d+")) {
-                System.out.println("Write words only");
+                System.out.println("Write words only ");
                 continue;
             }
             return check;
@@ -31,7 +31,8 @@ public class UserInteraction {
         while (true) {
             Integer check = tryRequestInt();
             if (check == null || check <= 0) {
-                System.out.println("wrong input");
+                System.out.println("Your input can't be empty" +
+                        "\nor equal to zero");
                 continue;
             }
             return check;
