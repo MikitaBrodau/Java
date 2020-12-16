@@ -16,8 +16,8 @@ public class BoxFactory {
 
     public Box createBox() {
         int type = userInteraction.requestInt(values(Box.values()) + "Choose one: ");
-        String color = userInteraction.requestString("color: ");
-        String material = userInteraction.requestString("material: ");
+        String color = userInteraction.requestString("Write using color: ");
+        String material = userInteraction.requestString("Write using material: ");
         return new Box(type, color, material);
     }
 

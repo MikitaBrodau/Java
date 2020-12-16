@@ -1,5 +1,7 @@
 package gift;
 
+import gift.sweets.GetSweetType;
+
 import java.io.PrintStream;
 import java.util.Scanner;
 
@@ -16,7 +18,8 @@ public class UserInteraction {
         output.print(prompt);
         while (true) {
             String check = scanner.nextLine();
-            if (check.isEmpty()) {
+            if (check.isEmpty() || check.matches("\\d+")) {
+                System.out.println("Write words only");
                 continue;
             }
             return check;
@@ -27,7 +30,8 @@ public class UserInteraction {
         output.print(prompt);
         while (true) {
             Integer check = tryRequestInt();
-            if (check == null) {
+            if (check == null || check < 0) {
+                System.out.println("wrong input");
                 continue;
             }
             return check;
@@ -38,8 +42,9 @@ public class UserInteraction {
         try {
             return Integer.parseInt(scanner.nextLine());
         } catch (NumberFormatException e) {
-            return null;
+            e.printStackTrace();
         }
+        throw new RuntimeException("Wrong input");
     }
 
     public boolean requestContinue(String prompt) {
