@@ -32,7 +32,7 @@ public class UserInteraction {
             Integer check = tryRequestInt();
             if (check == null || check <= 0) {
                 System.out.println("Your input can't be empty" +
-                        "\nor equal to zero");
+                        "\nOr less then zero or equal");
                 continue;
             }
             return check;
