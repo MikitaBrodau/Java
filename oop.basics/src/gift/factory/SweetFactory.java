@@ -28,22 +28,22 @@ public class SweetFactory {
                 Choose one:\s""");
         switch (sweet) {
             case 1 -> {
-                int typeSugary = userInteraction.requestInt(types(Sugary.values()) + "Please choose type: ");
+                int typeSugary = typesValidation(Sugary.values());
                 int amount = userInteraction.requestInt("Set Amount of sweets: ");
                 return new Sweet(new Sugary(typeSugary), amount);
             }
             case 2 -> {
-                int typeFlour = userInteraction.requestInt(types(Flour.values()) + "Please choose type: ");
+                int typeFlour = typesValidation(Flour.values());
                 int amount = userInteraction.requestInt("Set Amount of sweets: ");
                 return new Sweet(new Flour(typeFlour), amount);
             }
             case 3 -> {
-                int typeChocolate = userInteraction.requestInt(types(Chocolate.values()) + "Please choose type: ");
+                int typeChocolate = typesValidation(Chocolate.values());
                 int amount = userInteraction.requestInt("Set Amount of sweets: ");
                 return new Sweet(new Chocolate(typeChocolate), amount);
             }
             case 4 -> {
-                int typeCacao = userInteraction.requestInt(types(Cacao.values()) + "Please choose type: ");
+                int typeCacao = typesValidation(Cacao.values());
                 int amount = userInteraction.requestInt("Set Amount of sweets: ");
                 return new Sweet(new Cacao(typeCacao), amount);
             }
@@ -57,5 +57,11 @@ public class SweetFactory {
             sb.append(i + 1).append(". ").append(arr[i].getTxt()).append("\n");
         }
         return sb.toString();
+    }
+
+    private int typesValidation(GetSweetType[] arr){
+        int type = userInteraction.requestInt(types(arr) + "Please choose type: ");
+        if (type < arr.length) return type;
+        else return typesValidation(arr);
     }
 }
