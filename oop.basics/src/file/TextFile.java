@@ -21,7 +21,7 @@ class TextFile {
         try {
             if (!file.isDirectory()) {
                 if (file.createNewFile()) {
-                    System.out.println("successfully");
+                    System.out.println("successfully created");
                 } else if (file.exists()) System.out.println("already exist");
             } else file.mkdir();
         } catch (IOException e) {
@@ -32,6 +32,7 @@ class TextFile {
     public void rename(String name) {
         File file = new File(Paths.get(this.path) + "\\" + this.name.concat(txtExtension));
         boolean success = file.renameTo(new File(Paths.get(this.path) + "\\" + name.concat(txtExtension)));
+        this.name = name;
         if (!success) {
             System.out.println("fail to rename");
         } else System.out.println("Successfully renamed. new filename: " + name);
