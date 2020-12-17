@@ -3,9 +3,6 @@ package gift.factory;
 import gift.UserInteraction;
 import gift.sweets.*;
 
-import javax.xml.validation.Validator;
-import java.util.Arrays;
-
 public class SweetFactory {
     private final UserInteraction userInteraction;
 

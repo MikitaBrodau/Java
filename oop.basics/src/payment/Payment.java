@@ -1,4 +1,4 @@
-package File;
+package payment;
 
 import gift.UserInteraction;
 
@@ -74,5 +74,18 @@ public class Payment {
             for (Product p : list) {
                 this.summaryPrice += p.price * p.amount;
             }
-        }
     }
+
+    public static void main(String[] args) {
+        UserInteraction ui = new UserInteraction();
+        Payment payment = new Payment(ui);
+        while (true) {
+            if (ui.requestContinue("Do you want continue?\"Y/N\"")) break;
+            String name = ui.requestString("Name of product: ");
+            int price = ui.requestInt("Price: ");
+            int amount = ui.requestInt("Amount: ");
+            payment.getPayment().add(new Payment.Product(name, price, amount));
+        }
+        System.out.println(payment.toString());
+    }
+}

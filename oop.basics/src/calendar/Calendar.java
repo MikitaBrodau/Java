@@ -1,4 +1,4 @@
-package File;
+package calendar;
 
 import java.time.MonthDay;
 import java.util.ArrayList;
@@ -56,5 +56,16 @@ public class Calendar {
                     "\tis Holiday: " + isHoliday +
                     "\tdescription: " + description;
         }
+    }
+
+    public static void main(String[] args) {
+        List<Calendar.Holiday> holidays = new ArrayList<>();
+        holidays.add(new Calendar.Holiday(false, true, "all man day", 2, 23));
+        holidays.add(new Calendar.Holiday(false, true, "all lovers day", 2, 14));
+        Calendar calendar = new Calendar(holidays);
+        calendar.getHolidays().add(new Calendar.Holiday(true, true, "All womans day", 3, 8));
+        System.out.println(calendar.getHolidayDay(3, 8));
+        System.out.println(calendar.getHolidayDay(2, 23));
+        System.out.println(calendar.getHolidayDay(2, 14));
     }
 }
